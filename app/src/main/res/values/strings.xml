@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">仓储管理系统</string>
+
+    //登陆模块
+    <string name="login_username">用户名</string>
+    <string name="login_password">密码</string>
+    <string name="login_label_login">登陆</string>
+    <string name="login_label_register">注册</string>
+    <string name="login_title">仓库管理系统账号登陆</string>
+    <string name="login_enter_account">请输入用户名！</string>
+    <string name="login_enter_password">请输入密码！</string>
+</resources>

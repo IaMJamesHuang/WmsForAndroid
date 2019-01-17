@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+
+    <!--分割线-->
+    <color name="colorLine">#EBEBEB</color>
+
+    <color name="colorTheme">#ffce3d3a</color>
+    <color name="colorWhite">#ffffffff</color>
+    <color name="colorTabText">#585858</color>
+</resources>
