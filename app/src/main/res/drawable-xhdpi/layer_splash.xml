@@ -7,6 +7,6 @@
         <!-- 图片 如果尺寸不一致，那么周围的填充色就是背景色  设置后水平和纵向拉伸-->
         <bitmap
             android:gravity="fill_vertical|fill_horizontal"
-            android:src="@drawable/img_transition_default" />
+            android:src="@drawable/transition_bg" />
     </item>
 </layer-list>
