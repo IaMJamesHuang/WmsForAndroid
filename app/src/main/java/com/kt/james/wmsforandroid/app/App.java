@@ -8,6 +8,7 @@ import android.os.Build;
 
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.kt.james.wmsforandroid.BuildConfig;
+import com.kt.james.wmsforandroid.business.utils.WmsSpManager;
 import com.kt.james.wmsforandroid.net.HttpUtils;
 import com.kt.james.wmsforandroid.utils.crash.JLogCrashHandler;
 
@@ -20,6 +21,13 @@ public class App extends Application {
         super.onCreate();
         app = this;
         init();
+    }
+
+    @Override
+    public void onTerminate() {
+        super.onTerminate();
+        //去除登陆状态
+        WmsSpManager.setIsLogin(false);
     }
 
     private void init() {

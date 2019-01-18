@@ -35,6 +35,10 @@
             android:screenOrientation="portrait">
         </activity>
 
+        <activity android:name=".business.register.RegisterActivity"
+            android:screenOrientation="portrait">
+        </activity>
+
     </application>
 
 </manifest>

@@ -20,13 +20,24 @@ public interface HttpClient {
     }
 
     /**
-     * 玩安卓登录
-     *
+     * 登录
      * @param username 用户名
      * @param password 密码
      */
     @FormUrlEncoded
     @POST("login")
     Observable<LoginDto> login(@Field("username") String username, @Field("password") String password);
+
+    /**
+     * 登录
+     * @param companyId 公司Id
+     * @param account 账号名称
+     * @param nick 昵称
+     * @param password 密码
+     */
+    @FormUrlEncoded
+    @POST("register")
+    Observable<LoginDto> register(@Field("company_id") String companyId, @Field("account") String account,
+                                  @Field("nick") String nick, @Field("password") String password);
 
 }
