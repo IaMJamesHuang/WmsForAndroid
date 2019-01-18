@@ -30,34 +30,23 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <TextView
-                    android:text="@string/register_company_id"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-
-                <EditText
-                    android:id="@+id/et_company_id"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/register_company_id_hint"
-                    android:imeOptions="actionUnspecified"
-                    android:inputType="textPersonName"
-                    android:maxLines="1"
-                    android:singleLine="true"
-                    android:text="@={viewModel.company_id}" />
+                    <EditText
+                        android:id="@+id/et_company_id"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/register_company_id_hint"
+                        android:imeOptions="actionUnspecified"
+                        android:inputType="textPersonName"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:text="@={viewModel.companyName}" />
 
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
                 android:layout_marginBottom="5dp"
-                android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
-
-                <TextView
-                    android:text="@string/register_username"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
 
                 <AutoCompleteTextView
                     android:id="@+id/et_username"
@@ -76,11 +65,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <TextView
-                    android:text="@string/register_nick"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-
                 <EditText
                     android:id="@+id/et_nick"
                     android:layout_width="match_parent"
@@ -97,11 +81,6 @@
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
-
-                <TextView
-                    android:text="@string/register_t_password"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
 
                 <EditText
                     android:id="@+id/et_password"

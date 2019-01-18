@@ -5,6 +5,7 @@ import android.os.Bundle;
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.kt.james.wmsforandroid.R;
 import com.kt.james.wmsforandroid.base.BaseActivity;
+import com.kt.james.wmsforandroid.business.utils.WmsSpManager;
 import com.kt.james.wmsforandroid.databinding.ActivityMainBinding;
 import com.kt.james.wmsforandroid.utils.ResourceUtil;
 
@@ -18,5 +19,11 @@ public class MainActivity extends BaseActivity<MainViewModel, ActivityMainBindin
         setTitle(ResourceUtil.getString(R.string.main_title));
         showContentView();
         bindingView.setViewModel(viewModel);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        WmsSpManager.setIsLogin(false);
     }
 }

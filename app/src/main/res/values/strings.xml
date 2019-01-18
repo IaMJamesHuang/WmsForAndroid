@@ -12,8 +12,8 @@
 
     //注册模块
     <string name="register_title">注册</string>
-    <string name="register_company_id">公司ID：</string>
-    <string name="register_company_id_hint">请输入公司ID</string>
+    <string name="register_company_id">公司名称：</string>
+    <string name="register_company_id_hint">请输入公司名称</string>
     <string name="register_username">用户名：</string>
     <string name="register_username_hint">请输入用户名</string>
     <string name="register_nick">昵称：</string>

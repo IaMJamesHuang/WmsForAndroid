@@ -21,7 +21,7 @@ import io.reactivex.schedulers.Schedulers;
 
 public class RegisterViewModel extends AndroidViewModel {
 
-    public final ObservableField<String> company_id = new ObservableField<>();
+    public final ObservableField<String> companyName = new ObservableField<>();
     public final ObservableField<String> username = new ObservableField<>();
     public final ObservableField<String> nick = new ObservableField<>();
     public final ObservableField<String> password = new ObservableField<>();
@@ -37,7 +37,7 @@ public class RegisterViewModel extends AndroidViewModel {
             return data;
         }
         HttpClient.Builder.getWmsService()
-                .register(company_id.get(), username.get(), nick.get(), password.get())
+                .register(companyName.get(), username.get(), nick.get(), password.get())
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Observer<LoginDto>() {
@@ -72,9 +72,9 @@ public class RegisterViewModel extends AndroidViewModel {
     }
 
     private boolean verifyData() {
-        if (TextUtils.isEmpty(company_id.get())) {
+        if (TextUtils.isEmpty(companyName.get())) {
             ToastUtil.showToast(String.format(
-                    ResourceUtil.getString(R.string.register_toast_pattern), "公司ID！"));
+                    ResourceUtil.getString(R.string.register_toast_pattern), "公司名称！"));
             return false;
         }
         if (TextUtils.isEmpty(username.get())) {

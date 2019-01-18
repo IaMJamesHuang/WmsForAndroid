@@ -5,6 +5,7 @@ import com.kt.james.wmsforandroid.business.login.LoginDto;
 import io.reactivex.Observable;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
+import retrofit2.http.Headers;
 import retrofit2.http.POST;
 
 public interface HttpClient {
@@ -26,18 +27,20 @@ public interface HttpClient {
      */
     @FormUrlEncoded
     @POST("login")
+    @Headers("Content-Type:application/x-www-form-urlencoded; charset=utf-8")
     Observable<LoginDto> login(@Field("username") String username, @Field("password") String password);
 
     /**
      * 登录
-     * @param companyId 公司Id
+     * @param companyName 公司名称
      * @param account 账号名称
      * @param nick 昵称
      * @param password 密码
      */
     @FormUrlEncoded
     @POST("register")
-    Observable<LoginDto> register(@Field("company_id") String companyId, @Field("account") String account,
+    @Headers("Content-Type:application/x-www-form-urlencoded; charset=utf-8")
+    Observable<LoginDto> register(@Field("companyName") String companyName, @Field("account") String account,
                                   @Field("nick") String nick, @Field("password") String password);
 
 }
