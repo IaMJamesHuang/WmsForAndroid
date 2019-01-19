@@ -24,5 +24,10 @@
 
     //主页面
     <string name="main_title">仓库管理系统</string>
+    <string name="main_module_shelf">上架</string>
+    <string name="main_module_replenish">补货</string>
+    <string name="main_module_down">下架</string>
+    <string name="main_module_report">报表</string>
+    <string name="main_module_input">录入</string>
 
 </resources>
