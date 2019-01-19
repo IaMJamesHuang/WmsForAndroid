@@ -17,7 +17,7 @@
         android:roundIcon="@mipmap/wms_icon"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".business.MainActivity"
+        <activity android:name=".business.main.MainActivity"
             android:screenOrientation="portrait">
 
         </activity>

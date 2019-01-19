@@ -1,7 +1,5 @@
 package com.kt.james.wmsforandroid.business.login;
 
-import com.kt.james.wmsforandroid.business.UserBean;
-
 public class LoginDto {
 
     private UserBean userBean;

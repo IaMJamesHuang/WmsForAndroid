@@ -38,7 +38,7 @@ public class App extends Application {
 
     private void initCrashHandler() {
         Intent intent = new Intent();
-        intent.setClassName("com.kt.james.wmsforandroid", "com.kt.james.wmsforandroid.business.MainActivity");
+        intent.setClassName("com.kt.james.wmsforandroid", "com.kt.james.wmsforandroid.business.main.MainActivity");
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         PendingIntent restartIntent = PendingIntent.getActivity(getApplicationContext(), 0, intent, 0);
         JLogCrashHandler.getInstance().init(this, restartIntent);

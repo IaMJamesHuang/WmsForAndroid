@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="bean"
+            type="com.kt.james.wmsforandroid.business.main.MainPageBean" />
+
+    </data>
+
+    <android.support.v7.widget.CardView xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/cv_top_movie"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="6dp"
+        android:layout_marginEnd="6dp"
+        android:layout_marginStart="6dp"
+        android:layout_marginTop="6dp"
+        android:foreground="?attr/selectableItemBackgroundBorderless"
+        app:cardCornerRadius="2dp"
+        app:cardElevation="2dp">
+
+        <LinearLayout
+            android:layout_gravity="center"
+            android:id="@+id/ll_item_top"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="3dp">
+
+            <ImageView
+                android:id="@+id/iv_icon"
+                android:layout_gravity="center"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                tools:src="@drawable/icon_shelf"/>
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:paddingTop="3dp"
+                android:layout_gravity="center"
+                android:textSize="18sp"
+                android:textColor="@color/colorTheme"
+                tools:text="上架"
+                android:text="@{bean.title}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+</layout>

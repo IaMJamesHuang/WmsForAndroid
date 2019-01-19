@@ -5,13 +5,14 @@
         <import type="android.view.View" />
         <variable
             name="viewModel"
-            type="com.kt.james.wmsforandroid.business.MainViewModel" />
+            type="com.kt.james.wmsforandroid.business.main.MainViewModel" />
     </data>
 
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_main_page"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
     </FrameLayout>

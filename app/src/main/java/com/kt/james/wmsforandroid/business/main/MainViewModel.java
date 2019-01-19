@@ -1,4 +1,4 @@
-package com.kt.james.wmsforandroid.business;
+package com.kt.james.wmsforandroid.business.main;
 
 import android.app.Application;
 import android.arch.lifecycle.AndroidViewModel;
