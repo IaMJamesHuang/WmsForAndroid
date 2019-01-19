@@ -4,10 +4,18 @@
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
 
+    <!--页面背景的颜色-->
+    <color name="color_page_bg">#F1F3F4</color>
+
     <!--分割线-->
     <color name="colorLine">#EBEBEB</color>
 
     <color name="colorTheme">#ffce3d3a</color>
     <color name="colorWhite">#ffffffff</color>
     <color name="colorTabText">#585858</color>
+
+    <!--侧边栏分割线-->
+    <color name="colorNavLine">#E0E0E0</color>
+    <!--正文文字颜色-->
+    <color name="colorContent">#ff333333</color>
 </resources>

@@ -29,5 +29,8 @@
     <string name="main_module_down">下架</string>
     <string name="main_module_report">报表</string>
     <string name="main_module_input">录入</string>
+    <string name="main_nav_about">关于应用</string>
+    <string name="main_nav_switch">切换用户</string>
+    <string name="main_nav_exit">退出应用</string>
 
 </resources>

@@ -23,6 +23,7 @@
         app:cardElevation="2dp">
 
         <LinearLayout
+            android:paddingTop="3dp"
             android:layout_gravity="center"
             android:id="@+id/ll_item_top"
             android:layout_width="match_parent"

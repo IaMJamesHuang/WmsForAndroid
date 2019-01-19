@@ -1,21 +1,87 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <data>
-        <import type="android.view.View" />
-        <variable
-            name="viewModel"
-            type="com.kt.james.wmsforandroid.business.main.MainViewModel" />
-    </data>
-
-    <FrameLayout
+    <android.support.v4.widget.DrawerLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/drawer_layout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/rv_main_page"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        tools:context=".MainActivity">
+
+        <LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-    </FrameLayout>
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="true"
+            android:orientation="vertical"
+            tools:context="com.example.jingbin.cloudreader.MainActivity">
 
 
+            <!--状态栏-->
+            <View
+                android:id="@+id/view_status"
+                android:layout_width="match_parent"
+                android:layout_height="24dp"
+                android:background="@color/colorTheme"
+                android:visibility="gone" />
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@color/colorTheme"
+                app:contentInsetStart="0.0dp"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                app:theme="@style/ToolbarStyle">
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:id="@+id/ll_title_menu"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp">
+
+                    <ImageView
+                        android:id="@+id/iv_title_menu"
+                        android:layout_width="23dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:src="@drawable/titlebar_menu" />
+
+                    <TextView
+                        android:textSize="18sp"
+                        android:textColor="@color/colorWhite"
+                        android:paddingRight="10dp"
+                        android:paddingLeft="10dp"
+                        android:text="@string/main_title"
+                        android:gravity="center|start"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent" />
+
+                </LinearLayout>
+
+            </android.support.v7.widget.Toolbar>
+
+            <android.support.v7.widget.RecyclerView
+                android:padding="5dp"
+                android:id="@+id/rv_main_page"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+        <!--去掉background，会影响4.4系统的状态栏-->
+        <android.support.design.widget.NavigationView
+            android:id="@+id/nav_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:background="@color/color_page_bg"
+            android:fitsSystemWindows="true" />
+
+    </android.support.v4.widget.DrawerLayout>
 </layout>
