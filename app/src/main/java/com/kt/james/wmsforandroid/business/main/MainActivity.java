@@ -63,16 +63,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mPageAdapter = new MainPageAdapter(this);
         bindingView.rvMainPage.setAdapter(mPageAdapter);
         bindingView.rvMainPage.setLayoutManager(new GridLayoutManager(this, 3));
-        mPageAdapter.setOnItemClickListener(new OnItemClickListener<MainPageBean>() {
-            @Override
-            public void onClick(MainPageBean mainPageBean, int position) {
-                switch (mainPageBean.getTitle()) {
-                    case "录入":
-                        ARouterUtil.nav(MainActivity.this, URI_INPUT_ITEM_ACTIVITY);
-                        break;
-                }
+        mPageAdapter.setOnItemClickListener(((mainPageBean, position) -> {
+            switch (mainPageBean.getTitle()) {
+                case "录入":
+                    ARouterUtil.nav(MainActivity.this, URI_INPUT_ITEM_ACTIVITY);
+                    break;
             }
-        });
+        }));
     }
 
     private void initMenu() {

@@ -17,9 +17,10 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         <FrameLayout
+            android:layout_weight="1"
             android:id="@+id/scan_container"
             android:layout_width="match_parent"
-            android:layout_height="300dp"/>
+            android:layout_height="0dp"/>
 
         <LinearLayout
             android:orientation="vertical"
@@ -28,64 +29,98 @@
             android:paddingRight="@dimen/activity_vertical_margin"
             android:paddingTop="@dimen/activity_vertical_margin"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content">
 
             <ScrollView
                 android:layout_weight="1"
                 android:layout_width="match_parent"
                 android:layout_height="0dp">
                 <LinearLayout
-                    android:visibility="@{viewModel.isItem ? View.VISIBLE : View.GONE}"
                     android:orientation="vertical"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
                     <LinearLayout
-                        android:layout_marginBottom="@dimen/activity_vertical_margin"
+                        tools:visibility="gone"
+                        android:visibility="@{viewModel.isItem ? View.VISIBLE : View.GONE}"
+                        android:orientation="vertical"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
-                        <TextView
-                            android:text="@string/common_item_name"
-                            style="@style/CommonText"/>
-                        <TextView
-                            android:id="@+id/tv_item_name"
-                            android:textColor="@color/colorBlack"
-                            tools:text="手指奶油"
-                            style="@style/CommonText"/>
+                        <LinearLayout
+                            android:layout_marginBottom="@dimen/activity_vertical_margin"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                            <TextView
+                                android:text="@string/common_item_name"
+                                style="@style/CommonText"/>
+                            <TextView
+                                android:text="@{viewModel.itemName}"
+                                android:id="@+id/tv_item_name"
+                                android:textColor="@color/colorBlack"
+                                tools:text="手指奶油"
+                                style="@style/CommonText"/>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_marginBottom="@dimen/activity_vertical_margin"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                            <TextView
+                                android:text="@string/common_item_spec"
+                                style="@style/CommonText"/>
+                            <TextView
+                                android:text="@{viewModel.itemSpec}"
+                                android:id="@+id/tv_item_spec"
+                                android:textColor="@color/colorBlack"
+                                tools:text="33克"
+                                style="@style/CommonText"/>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_marginBottom="@dimen/activity_vertical_margin"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                            <TextView
+                                android:text="@string/common_item_brand"
+                                style="@style/CommonText"/>
+                            <TextView
+                                android:text="@{viewModel.itemBrand}"
+                                android:id="@+id/tv_item_brand"
+                                android:textColor="@color/colorBlack"
+                                tools:text="中国测试第一厂商"
+                                style="@style/CommonText"/>
+                        </LinearLayout>
                     </LinearLayout>
 
-                    <LinearLayout
-                        android:layout_marginBottom="@dimen/activity_vertical_margin"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-                        <TextView
-                            android:text="@string/common_item_spec"
-                            style="@style/CommonText"/>
-                        <TextView
-                            android:id="@+id/tv_item_spec"
-                            android:textColor="@color/colorBlack"
-                            tools:text="33克"
-                            style="@style/CommonText"/>
-                    </LinearLayout>
+                   <LinearLayout
+                       tools:visibility="visible"
+                       android:visibility="@{viewModel.isItem ? View.GONE : View.VISIBLE}"
+                       android:orientation="vertical"
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content">
 
-                    <LinearLayout
-                        android:layout_marginBottom="@dimen/activity_vertical_margin"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-                        <TextView
-                            android:text="@string/common_item_brand"
-                            style="@style/CommonText"/>
-                        <TextView
-                            android:id="@+id/tv_item_brand"
-                            android:textColor="@color/colorBlack"
-                            tools:text="中国测试第一厂商"
-                            style="@style/CommonText"/>
-                    </LinearLayout>
+                       <LinearLayout
+                           android:layout_marginBottom="@dimen/activity_vertical_margin"
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content">
+                           <TextView
+                               android:text="@string/common_loc"
+                               style="@style/CommonText"/>
+                           <TextView
+                               android:text="@{viewModel.locCode}"
+                               android:textColor="@color/colorBlack"
+                               tools:text="LC00002"
+                               style="@style/CommonText"/>
+                       </LinearLayout>
+
+                   </LinearLayout>
+
 
                 </LinearLayout>
             </ScrollView>
 
             <Button
+                android:onClick="onConfirm"
                 android:text="@string/common_yes"
                 style="@style/CommonButton"
                 android:layout_width="match_parent"

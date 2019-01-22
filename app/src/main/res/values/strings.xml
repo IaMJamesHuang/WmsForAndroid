@@ -45,6 +45,7 @@
     <string name="common_amount">存放数量：</string>
     <string name="common_submit">提交</string>
     <string name="common_yes">确认</string>
+    <string name="common_loc">库位：</string>
 
     //扫码
     <string name="scan_title">扫码</string>

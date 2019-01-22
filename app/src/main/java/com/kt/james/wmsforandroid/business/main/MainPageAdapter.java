@@ -34,6 +34,11 @@ public class MainPageAdapter extends BaseRecycleViewAdapter<MainPageBean> {
         @Override
         public void onBindViewHolder(MainPageBean object, int position) {
             binding.setBean(object);
+            if (listener != null ) {
+                binding.getRoot().setOnClickListener((v)->{
+                    listener.onClick(object, position);
+                });
+            }
             if (object != null) {
                 ImageLoader.getInstance().displayImage(context, object.getIconImgId(), binding.ivIcon);
             }
