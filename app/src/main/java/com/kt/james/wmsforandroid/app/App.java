@@ -11,6 +11,7 @@ import com.kt.james.wmsforandroid.BuildConfig;
 import com.kt.james.wmsforandroid.business.utils.WmsSpManager;
 import com.kt.james.wmsforandroid.net.HttpUtils;
 import com.kt.james.wmsforandroid.utils.crash.JLogCrashHandler;
+import com.uuzuche.lib_zxing.activity.ZXingLibrary;
 
 public class App extends Application {
 
@@ -34,6 +35,7 @@ public class App extends Application {
         initCrashHandler();
         initHttp();
         initARouter();
+        initZXing();
     }
 
     private void initCrashHandler() {
@@ -54,6 +56,10 @@ public class App extends Application {
             ARouter.openDebug();   // 开启调试模式(如果在InstantRun模式下运行，必须开启调试模式！线上版本需要关闭,否则有安全风险)
         }
         ARouter.init(this); // 尽可能早，推荐在Application中初始化
+    }
+
+    private void initZXing() {
+        ZXingLibrary.initDisplayOpinion(this);
     }
 
     private boolean isDebug() {

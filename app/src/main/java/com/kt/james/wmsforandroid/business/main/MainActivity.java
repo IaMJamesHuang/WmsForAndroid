@@ -10,14 +10,18 @@ import android.view.ViewGroup;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.kt.james.wmsforandroid.R;
+import com.kt.james.wmsforandroid.base.adapter.OnItemClickListener;
 import com.kt.james.wmsforandroid.business.utils.WmsSpManager;
 import com.kt.james.wmsforandroid.databinding.ActivityMainBinding;
 import com.kt.james.wmsforandroid.databinding.LayoutNavMainBinding;
+import com.kt.james.wmsforandroid.utils.ARouterUtil;
 import com.kt.james.wmsforandroid.utils.ResourceUtil;
 import com.kt.james.wmsforandroid.view.StatusBarUtil;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import static com.kt.james.wmsforandroid.app.Constants.URI_INPUT_ITEM_ACTIVITY;
 
 @Route(path = "/main/main_activity", name = "主页面")
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
@@ -59,6 +63,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mPageAdapter = new MainPageAdapter(this);
         bindingView.rvMainPage.setAdapter(mPageAdapter);
         bindingView.rvMainPage.setLayoutManager(new GridLayoutManager(this, 3));
+        mPageAdapter.setOnItemClickListener(new OnItemClickListener<MainPageBean>() {
+            @Override
+            public void onClick(MainPageBean mainPageBean, int position) {
+                switch (mainPageBean.getTitle()) {
+                    case "录入":
+                        ARouterUtil.nav(MainActivity.this, URI_INPUT_ITEM_ACTIVITY);
+                        break;
+                }
+            }
+        });
     }
 
     private void initMenu() {

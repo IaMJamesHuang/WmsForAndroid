@@ -18,9 +18,11 @@ import android.view.ViewStub;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
+import com.alibaba.android.arouter.launcher.ARouter;
 import com.kt.james.wmsforandroid.R;
 import com.kt.james.wmsforandroid.app.App;
 import com.kt.james.wmsforandroid.databinding.ActivityBaseBinding;
+import com.kt.james.wmsforandroid.utils.ARouterUtil;
 import com.kt.james.wmsforandroid.utils.ClassUtil;
 import com.kt.james.wmsforandroid.utils.ResourceUtil;
 import com.kt.james.wmsforandroid.view.PerfectClickListener;
@@ -174,6 +176,20 @@ public abstract class BaseActivity<VM extends AndroidViewModel, SV extends ViewD
         }
     }
 
+    protected void nav(String uri) {
+        ARouterUtil.nav(this, uri);
+    }
 
+    protected void nav(String uri, Bundle bundle) {
+        ARouterUtil.nav(this, uri, bundle);
+    }
+
+    private void navForResult(String uri, int requestCode) {
+        ARouterUtil.navForResult(this, uri, requestCode);
+    }
+
+    private void navForResult(String uri, Bundle bundle, int requestCode) {
+        ARouterUtil.navForResult(this, uri, bundle, requestCode);
+    }
 
 }

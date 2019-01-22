@@ -55,4 +55,30 @@
         <item name="android:windowFullscreen">true</item>
     </style>
 
+    <style name="CommonText">
+        <item name="android:layout_gravity">center</item>
+        <item name="android:textColor">@color/colorTheme</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="CommonEditText">
+        <item name="android:layout_gravity">center</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:background">@drawable/bg_common_edittext</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="CommonButton">
+        <item name="android:textColor">@color/colorWhite</item>
+        <item name="android:background">@drawable/bg_common_button</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
 </resources>

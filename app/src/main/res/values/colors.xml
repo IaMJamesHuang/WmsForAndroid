@@ -4,6 +4,8 @@
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
 
+    <color name="colorBlack">#000000</color>
+
     <!--页面背景的颜色-->
     <color name="color_page_bg">#F1F3F4</color>
 

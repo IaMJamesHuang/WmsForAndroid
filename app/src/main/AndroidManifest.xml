@@ -39,6 +39,12 @@
             android:screenOrientation="portrait">
         </activity>
 
+        <activity android:name=".business.scan.CommonScanActivity"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".business.input.InputActivity"
+            android:screenOrientation="portrait"/>
+
     </application>
 
 </manifest>

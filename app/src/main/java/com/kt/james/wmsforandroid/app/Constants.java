@@ -10,5 +10,6 @@ public class Constants {
     public static final String URI_MAIN_ACTIVITY = "/main/main_activity";
     public static final String URI_LOGIN_ACTIVITY = "/login/login_activity";
     public static final String URI_REGISTER_ACTIVITY = "/login/register_activity";
+    public static final String URI_INPUT_ITEM_ACTIVITY = "/input/input_activity";
 
 }

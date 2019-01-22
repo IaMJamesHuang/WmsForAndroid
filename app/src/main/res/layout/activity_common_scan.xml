@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.kt.james.wmsforandroid.business.scan.CommonScanViewModel" />
+    </data>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:id="@+id/scan_root_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <FrameLayout
+            android:id="@+id/scan_container"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"/>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/activity_vertical_margin"
+            android:paddingLeft="@dimen/activity_vertical_margin"
+            android:paddingRight="@dimen/activity_vertical_margin"
+            android:paddingTop="@dimen/activity_vertical_margin"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ScrollView
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="0dp">
+                <LinearLayout
+                    android:visibility="@{viewModel.isItem ? View.VISIBLE : View.GONE}"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_marginBottom="@dimen/activity_vertical_margin"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:text="@string/common_item_name"
+                            style="@style/CommonText"/>
+                        <TextView
+                            android:id="@+id/tv_item_name"
+                            android:textColor="@color/colorBlack"
+                            tools:text="手指奶油"
+                            style="@style/CommonText"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_marginBottom="@dimen/activity_vertical_margin"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:text="@string/common_item_spec"
+                            style="@style/CommonText"/>
+                        <TextView
+                            android:id="@+id/tv_item_spec"
+                            android:textColor="@color/colorBlack"
+                            tools:text="33克"
+                            style="@style/CommonText"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_marginBottom="@dimen/activity_vertical_margin"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:text="@string/common_item_brand"
+                            style="@style/CommonText"/>
+                        <TextView
+                            android:id="@+id/tv_item_brand"
+                            android:textColor="@color/colorBlack"
+                            tools:text="中国测试第一厂商"
+                            style="@style/CommonText"/>
+                    </LinearLayout>
+
+                </LinearLayout>
+            </ScrollView>
+
+            <Button
+                android:text="@string/common_yes"
+                style="@style/CommonButton"
+                android:layout_width="match_parent"
+                android:layout_height="50dp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</layout>
