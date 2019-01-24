@@ -1,16 +1,21 @@
 package com.kt.james.wmsforandroid.net;
 
+import com.kt.james.wmsforandroid.business.input.dto.AddItemDto;
+import com.kt.james.wmsforandroid.business.input.dto.CheckItemBarcodeDto;
+import com.kt.james.wmsforandroid.business.input.dto.CheckLocDto;
 import com.kt.james.wmsforandroid.business.login.LoginDto;
 
 import io.reactivex.Observable;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
+import retrofit2.http.GET;
 import retrofit2.http.Headers;
 import retrofit2.http.POST;
+import retrofit2.http.Query;
 
 public interface HttpClient {
 
-    public static final int CODE_SUCCESS = 200;
+    int CODE_SUCCESS = 200;
 
     class Builder {
 
@@ -43,4 +48,35 @@ public interface HttpClient {
     Observable<LoginDto> register(@Field("companyName") String companyName, @Field("account") String account,
                                   @Field("nick") String nick, @Field("password") String password);
 
+    /**
+     * 校验商品条码
+     * @param barcode 条码
+     * @param company_id 公司ID
+     */
+    @GET("checkItemBarcode")
+    Observable<CheckItemBarcodeDto> checkItemBarcode(@Query("barcode") String barcode,
+                                                     @Query("company_id") String company_id);
+
+    /**
+     * 校验库位
+     * @param loc 库位
+     * @param company_id 公司ID
+     */
+    @GET("checkLoc")
+    Observable<CheckLocDto> checkLoc(@Query("locCode") String loc,
+                                     @Query("company_id") String company_id);
+
+    /**
+     * 录入商品
+     * @param barcode 条码
+     * @param company_id 公司ID
+     * @param amount 数量
+     * @param loc 库位
+     */
+    @FormUrlEncoded
+    @POST("addItem")
+    @Headers("Content-Type:application/x-www-form-urlencoded; charset=utf-8")
+    Observable<AddItemDto> addItem(@Field("barcode") String barcode,
+                                   @Field("company_id") String company_id,
+                                   @Field("amount") float amount, @Field("loc") String loc);
 }

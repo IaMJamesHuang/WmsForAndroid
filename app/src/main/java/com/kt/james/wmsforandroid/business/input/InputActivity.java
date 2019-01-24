@@ -51,7 +51,7 @@ public class InputActivity extends BaseActivity<InputViewModel, ActivityItemInpu
             case R.id.bt_go_scan_loc:
                 Bundle locBundle = new Bundle();
                 locBundle.putInt("from", CommonScanActivity.LOC);
-                ARouterUtil.navForResult(this, Constants.URI_SCAN_ITEM_ACTIVITY, locBundle, REQUEST_SCAN_ITEM);
+                ARouterUtil.navForResult(this, Constants.URI_SCAN_ITEM_ACTIVITY, locBundle, REQUEST_SCAN_LOC);
                 break;
             case R.id.bt_submit:
                 viewModel.submit().observe(this, this::submitCallBack);

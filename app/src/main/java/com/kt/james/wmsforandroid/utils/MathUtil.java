@@ -2,10 +2,10 @@ package com.kt.james.wmsforandroid.utils;
 
 public class MathUtil {
 
-    public static double tryFormatDouble(String value, double defaultValue) {
-        double result;
+    public static float tryFormatFloat(String value, float defaultValue) {
+        float result;
         try {
-            result = Double.valueOf(value);
+            result = Float.valueOf(value);
         } catch (Exception e) {
             result = defaultValue;
         }

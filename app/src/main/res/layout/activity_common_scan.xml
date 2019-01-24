@@ -107,6 +107,7 @@
                                android:text="@string/common_loc"
                                style="@style/CommonText"/>
                            <TextView
+                               android:id="@+id/tv_loc_code"
                                android:text="@{viewModel.locCode}"
                                android:textColor="@color/colorBlack"
                                tools:text="LC00002"

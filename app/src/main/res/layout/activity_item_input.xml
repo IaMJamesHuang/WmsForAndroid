@@ -32,7 +32,7 @@
                     style="@style/CommonText" />
 
                 <EditText
-                    android:text="@{viewModel.barcode}"
+                    android:text="@={viewModel.barcode}"
                     android:enabled="false"
                     android:id="@+id/et_scan_barcode"
                     android:hint="@string/common_barcode_hint"
@@ -53,7 +53,7 @@
                     style="@style/CommonText" />
 
                 <EditText
-                    android:text="@{viewModel.name}"
+                    android:text="@={viewModel.name}"
                     android:enabled="false"
                     android:id="@+id/et_item_name"
                     style="@style/CommonEditText" />
@@ -68,7 +68,7 @@
                     style="@style/CommonText" />
 
                 <EditText
-                    android:text="@{viewModel.spec}"
+                    android:text="@={viewModel.spec}"
                     android:enabled="false"
                     android:id="@+id/et_item_spec"
                     style="@style/CommonEditText" />
@@ -83,7 +83,7 @@
                     style="@style/CommonText" />
 
                 <EditText
-                    android:text="@{viewModel.brand}"
+                    android:text="@={viewModel.brand}"
                     android:enabled="false"
                     android:id="@+id/et_item_brand"
                     style="@style/CommonEditText" />
@@ -98,7 +98,7 @@
                     style="@style/CommonText" />
 
                 <EditText
-                    android:text="@{viewModel.loc}"
+                    android:text="@={viewModel.loc}"
                     android:enabled="false"
                     android:id="@+id/et_scan_loc"
                     android:hint="@string/common_store_loc_hint"
@@ -119,7 +119,7 @@
                     style="@style/CommonText" />
 
                 <EditText
-                    android:text="@{viewModel.amount}"
+                    android:text="@={viewModel.amount}"
                     android:id="@+id/et_item_amount"
                     style="@style/CommonEditText" />
             </LinearLayout>

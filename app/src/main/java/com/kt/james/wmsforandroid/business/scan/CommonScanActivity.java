@@ -4,12 +4,15 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 
 import com.alibaba.android.arouter.facade.annotation.Autowired;
 import com.alibaba.android.arouter.facade.annotation.Route;
+import com.alibaba.android.arouter.launcher.ARouter;
 import com.kt.james.wmsforandroid.R;
 import com.kt.james.wmsforandroid.base.BaseActivity;
+import com.kt.james.wmsforandroid.business.utils.WmsSpManager;
 import com.kt.james.wmsforandroid.databinding.ActivityCommonScanBinding;
 import com.kt.james.wmsforandroid.utils.ResourceUtil;
 import com.kt.james.wmsforandroid.utils.ToastUtil;
@@ -18,7 +21,7 @@ import com.uuzuche.lib_zxing.activity.CodeUtils;
 
 @Route(path = "/scan/common_scan_activity", name = "扫码页面")
 public class CommonScanActivity extends BaseActivity<CommonScanViewModel, ActivityCommonScanBinding> {
-
+    private static final String TAG = "CommonScanActivity";
     public static final int ITEM = 0x00;
     public static final int LOC = 0x01;
 
@@ -31,7 +34,9 @@ public class CommonScanActivity extends BaseActivity<CommonScanViewModel, Activi
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_common_scan);
+        ARouter.getInstance().inject(this);
         CaptureFragment captureFragment = new CaptureFragment();
+        CodeUtils.setFragmentArgs(captureFragment, R.layout.layout_scan_barcode);
         captureFragment.setAnalyzeCallback(codeCallBack);
         getSupportFragmentManager().beginTransaction().replace(R.id.scan_container, captureFragment).commit();
         setTitle(ResourceUtil.getString(R.string.scan_title));
@@ -43,6 +48,8 @@ public class CommonScanActivity extends BaseActivity<CommonScanViewModel, Activi
     CodeUtils.AnalyzeCallback codeCallBack = new CodeUtils.AnalyzeCallback() {
         @Override
         public void onAnalyzeSuccess(Bitmap mBitmap, String result) {
+            Log.e(TAG, "onAnalyzeSuccess: " + result);
+            Log.e(TAG, WmsSpManager.getCompanyId());
             if (from == ITEM) {
                 viewModel.requestItemCode(result).observe(CommonScanActivity.this, CommonScanActivity.this::itemCallback);
             } else {
@@ -66,7 +73,7 @@ public class CommonScanActivity extends BaseActivity<CommonScanViewModel, Activi
 
     private void locCallback(String result) {
         if (!TextUtils.isEmpty(result)) {
-
+            bindingView.tvLocCode.setText(result);
         }
     }
 
@@ -81,6 +88,7 @@ public class CommonScanActivity extends BaseActivity<CommonScanViewModel, Activi
             result.putExtra(RESULT_TAG, viewModel.getLocResult());
         }
         setResult(RESULT_OK, result);
+        finish();
     }
 
 }

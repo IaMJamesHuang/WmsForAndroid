@@ -7,8 +7,16 @@ import android.databinding.ObservableField;
 import android.support.annotation.NonNull;
 import android.text.TextUtils;
 
+import com.kt.james.wmsforandroid.business.input.dto.AddItemDto;
+import com.kt.james.wmsforandroid.business.utils.WmsSpManager;
+import com.kt.james.wmsforandroid.net.HttpClient;
 import com.kt.james.wmsforandroid.utils.MathUtil;
 import com.kt.james.wmsforandroid.utils.ToastUtil;
+
+import io.reactivex.Observer;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.disposables.Disposable;
+import io.reactivex.schedulers.Schedulers;
 
 public class InputViewModel extends AndroidViewModel {
 
@@ -29,7 +37,35 @@ public class InputViewModel extends AndroidViewModel {
             data.setValue(false);
             return data;
         }
-        //接口
+        HttpClient.Builder.getWmsService().addItem(barcode.get(), WmsSpManager.getCompanyId(),
+                MathUtil.tryFormatFloat(amount.get(), -1f), loc.get())
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Observer<AddItemDto>() {
+                    @Override
+                    public void onSubscribe(Disposable d) {
+
+                    }
+
+                    @Override
+                    public void onNext(AddItemDto addItemDto) {
+                        if (addItemDto != null && addItemDto.getResponseCode() == HttpClient.CODE_SUCCESS) {
+                            data.setValue(true);
+                        } else {
+                            data.setValue(false);
+                        }
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        data.setValue(false);
+                    }
+
+                    @Override
+                    public void onComplete() {
+
+                    }
+                });
         return data;
     }
 
@@ -42,7 +78,7 @@ public class InputViewModel extends AndroidViewModel {
             ToastUtil.showToast("请扫描库位！");
             return false;
         }
-        return !(MathUtil.tryFormatDouble(amount.get(), 0.0) == 0.0);
+        return !(MathUtil.tryFormatFloat(amount.get(), 0f) == 0f);
     }
 
 }

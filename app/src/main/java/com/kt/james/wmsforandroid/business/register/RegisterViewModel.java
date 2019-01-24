@@ -9,6 +9,7 @@ import android.text.TextUtils;
 
 import com.kt.james.wmsforandroid.R;
 import com.kt.james.wmsforandroid.business.login.LoginDto;
+import com.kt.james.wmsforandroid.business.utils.WmsSpManager;
 import com.kt.james.wmsforandroid.net.HttpClient;
 import com.kt.james.wmsforandroid.utils.ResourceUtil;
 import com.kt.james.wmsforandroid.utils.ToastUtil;
@@ -49,6 +50,7 @@ public class RegisterViewModel extends AndroidViewModel {
                     @Override
                     public void onNext(LoginDto loginDto) {
                         if (loginDto != null && loginDto.getResponseCode() == HttpClient.CODE_SUCCESS) {
+                            WmsSpManager.setCompanyId(loginDto.getUserBean().getCompany_id());
                             data.setValue(true);
                         } else {
                             if (loginDto != null) {

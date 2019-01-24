@@ -22,16 +22,16 @@ public class LoginInterceptor implements IInterceptor {
 
     @Override
     public void process(Postcard postcard, InterceptorCallback callback) {
-        Log.d(TAG, "process: process");
-        callback.onContinue(postcard);
-//        if (interceptorActivity.contains(postcard.getPath()) && !WmsSpManager.getIsLogin()) {
-//                Log.d(TAG, "process: onInterrupt");
-//            callback.onInterrupt(null);
-//            ARouter.getInstance().build(Constants.URI_LOGIN_ACTIVITY).navigation();
-//        } else {
-//            Log.d(TAG, "process: onContinue");
-//            callback.onContinue(postcard);
-//        }
+//        Log.d(TAG, "process: process");
+//        callback.onContinue(postcard);
+        if (interceptorActivity.contains(postcard.getPath()) && !WmsSpManager.getIsLogin()) {
+                Log.d(TAG, "process: onInterrupt");
+            callback.onInterrupt(null);
+            ARouter.getInstance().build(Constants.URI_LOGIN_ACTIVITY).navigation();
+        } else {
+            Log.d(TAG, "process: onContinue");
+            callback.onContinue(postcard);
+        }
     }
 
     @Override
