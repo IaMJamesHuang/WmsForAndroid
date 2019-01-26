@@ -56,4 +56,9 @@
     //关于
     <string name="about_current_version">当前版本  %s</string>
     <string name="about_title">关于</string>
+
+    //下架
+    <string name="off_shelf_title">下架</string>
+    <string name="off_shelf_loc">下架库位：</string>
+    <string name="off_shelf_num">下架数量：</string>
 </resources>

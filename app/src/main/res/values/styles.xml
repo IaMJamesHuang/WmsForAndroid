@@ -64,6 +64,7 @@
     </style>
 
     <style name="CommonEditText">
+        <item name="android:textColor">@color/colorBlack</item>
         <item name="android:layout_gravity">center</item>
         <item name="android:maxLines">1</item>
         <item name="android:background">@drawable/bg_common_edittext</item>

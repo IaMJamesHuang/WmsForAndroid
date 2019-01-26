@@ -50,6 +50,9 @@
         <activity android:name=".app.about.AboutActivity"
             android:screenOrientation="portrait"/>
 
+        <activity android:name=".app.offshelf.OffShelfActivity"
+            android:screenOrientation="portrait"/>
+
     </application>
 
 </manifest>

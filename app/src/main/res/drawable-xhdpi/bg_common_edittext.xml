@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:state_window_focused="false"
+        android:state_enabled="true"
+        android:state_focused="false"
         android:drawable="@drawable/bg_common_edittext_normal" />
     <item
+        android:state_enabled="true"
         android:state_focused="true"
         android:drawable="@drawable/bg_common_edittext_focused" />
+
+    <item
+        android:state_enabled="false"
+        android:drawable="@drawable/bg_common_edittext_disabled"/>
 </selector>

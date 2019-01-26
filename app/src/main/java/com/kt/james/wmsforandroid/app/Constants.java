@@ -13,5 +13,6 @@ public class Constants {
     public static final String URI_INPUT_ITEM_ACTIVITY = "/input/input_activity";
     public static final String URI_SCAN_ITEM_ACTIVITY = "/scan/common_scan_activity";
     public static final String URI_ABOUT = "/about/about_activity";
+    public static final String URI_OFF_SHELF_ACTIVITY = "/offshelf/off_shelf_activity";
 
 }

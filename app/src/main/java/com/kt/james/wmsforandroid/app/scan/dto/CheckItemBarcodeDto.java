@@ -1,4 +1,4 @@
-package com.kt.james.wmsforandroid.app.input.dto;
+package com.kt.james.wmsforandroid.app.scan.dto;
 
 import com.kt.james.wmsforandroid.base.BaseDto;
 

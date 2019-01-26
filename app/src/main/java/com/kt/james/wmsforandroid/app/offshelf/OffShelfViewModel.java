@@ -1,4 +1,4 @@
-package com.kt.james.wmsforandroid.app.input;
+package com.kt.james.wmsforandroid.app.offshelf;
 
 import android.app.Application;
 import android.arch.lifecycle.AndroidViewModel;
@@ -17,7 +17,7 @@ import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.schedulers.Schedulers;
 
-public class InputViewModel extends AndroidViewModel {
+public class OffShelfViewModel extends AndroidViewModel {
 
     public final ObservableField<String> barcode = new ObservableField<>();
     public final ObservableField<String> name = new ObservableField<>();
@@ -26,7 +26,7 @@ public class InputViewModel extends AndroidViewModel {
     public final ObservableField<String> loc = new ObservableField<>();
     public final ObservableField<String> amount = new ObservableField<>();
 
-    public InputViewModel(@NonNull Application application) {
+    public OffShelfViewModel(@NonNull Application application) {
         super(application);
     }
 
@@ -36,19 +36,19 @@ public class InputViewModel extends AndroidViewModel {
             data.setValue(false);
             return data;
         }
-        HttpClient.Builder.getWmsService().addItem(barcode.get(), WmsSpManager.getCompanyId(),
+        HttpClient.Builder.getWmsService().offShelfItem(barcode.get(), WmsSpManager.getCompanyId(),
                 MathUtil.tryFormatFloat(amount.get(), -1f), loc.get())
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Observer<AddItemDto>() {
+                .subscribe(new Observer<OffShelfDto>() {
                     @Override
                     public void onSubscribe(Disposable d) {
 
                     }
 
                     @Override
-                    public void onNext(AddItemDto addItemDto) {
-                        if (addItemDto != null && addItemDto.getResponseCode() == HttpClient.CODE_SUCCESS) {
+                    public void onNext(OffShelfDto offShelfDto) {
+                        if (offShelfDto != null && offShelfDto.getResponseCode() == HttpClient.CODE_SUCCESS) {
                             data.setValue(true);
                         } else {
                             data.setValue(false);
@@ -69,12 +69,12 @@ public class InputViewModel extends AndroidViewModel {
     }
 
     private boolean verifyData() {
-        if (TextUtils.isEmpty(barcode.get())) {
-            ToastUtil.showToast("请扫描商品条码！");
-            return false;
-        }
         if (TextUtils.isEmpty(loc.get())) {
             ToastUtil.showToast("请扫描库位！");
+            return false;
+        }
+        if (TextUtils.isEmpty(barcode.get())) {
+            ToastUtil.showToast("请扫描商品条码！");
             return false;
         }
         return !(MathUtil.tryFormatFloat(amount.get(), 0f) == 0f);

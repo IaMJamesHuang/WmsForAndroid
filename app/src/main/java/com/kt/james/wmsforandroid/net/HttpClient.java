@@ -1,9 +1,10 @@
 package com.kt.james.wmsforandroid.net;
 
-import com.kt.james.wmsforandroid.app.input.dto.AddItemDto;
-import com.kt.james.wmsforandroid.app.input.dto.CheckItemBarcodeDto;
-import com.kt.james.wmsforandroid.app.input.dto.CheckLocDto;
+import com.kt.james.wmsforandroid.app.input.AddItemDto;
 import com.kt.james.wmsforandroid.app.login.LoginDto;
+import com.kt.james.wmsforandroid.app.offshelf.OffShelfDto;
+import com.kt.james.wmsforandroid.app.scan.dto.CheckItemBarcodeDto;
+import com.kt.james.wmsforandroid.app.scan.dto.CheckLocDto;
 
 import io.reactivex.Observable;
 import retrofit2.http.Field;
@@ -79,4 +80,19 @@ public interface HttpClient {
     Observable<AddItemDto> addItem(@Field("barcode") String barcode,
                                    @Field("company_id") String company_id,
                                    @Field("amount") float amount, @Field("loc") String loc);
+
+    /**
+     * 商品下架
+     * @param barcode 条码
+     * @param company_id 公司ID
+     * @param amount 数量
+     * @param loc 库位
+     */
+    @FormUrlEncoded
+    @POST("offShelf")
+    @Headers("Content-Type:application/x-www-form-urlencoded; charset=utf-8")
+    Observable<OffShelfDto> offShelfItem(@Field("barcode") String barcode,
+                                         @Field("company_id") String company_id,
+                                         @Field("amount") float amount, @Field("loc") String loc);
+
 }

@@ -7,9 +7,9 @@ import android.databinding.ObservableField;
 import android.support.annotation.NonNull;
 import android.text.TextUtils;
 
-import com.kt.james.wmsforandroid.app.input.dto.CheckItemBarcodeDto;
-import com.kt.james.wmsforandroid.app.input.dto.CheckLocDto;
-import com.kt.james.wmsforandroid.app.input.dto.ItemBarcodeBean;
+import com.kt.james.wmsforandroid.app.scan.dto.CheckItemBarcodeDto;
+import com.kt.james.wmsforandroid.app.scan.dto.CheckLocDto;
+import com.kt.james.wmsforandroid.app.scan.dto.ItemBarcodeBean;
 import com.kt.james.wmsforandroid.app.utils.WmsSpManager;
 import com.kt.james.wmsforandroid.net.HttpClient;
 import com.kt.james.wmsforandroid.utils.ToastUtil;

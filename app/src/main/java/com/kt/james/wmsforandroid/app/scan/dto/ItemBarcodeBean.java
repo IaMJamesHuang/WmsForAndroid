@@ -1,4 +1,4 @@
-package com.kt.james.wmsforandroid.app.input.dto;
+package com.kt.james.wmsforandroid.app.scan.dto;
 
 public class ItemBarcodeBean {
 

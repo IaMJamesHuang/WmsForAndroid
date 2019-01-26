@@ -23,4 +23,7 @@
 
     <!--首页item文字颜色-->
     <color name="colorSubtitle">#999</color>
+
+    <!--EditText disabled的颜色-->
+    <color name="colorEditTextDisabled">#D3D3D3</color>
 </resources>
