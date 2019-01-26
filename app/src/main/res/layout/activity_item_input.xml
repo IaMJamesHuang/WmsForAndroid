@@ -5,7 +5,7 @@
 
         <variable
             name="viewModel"
-            type="com.kt.james.wmsforandroid.business.input.InputViewModel" />
+            type="com.kt.james.wmsforandroid.app.input.InputViewModel" />
     </data>
 
     <ScrollView

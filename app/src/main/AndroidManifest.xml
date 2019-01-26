@@ -19,12 +19,12 @@
         android:roundIcon="@mipmap/wms_icon"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".business.main.MainActivity"
+        <activity android:name=".app.main.MainActivity"
             android:screenOrientation="portrait">
 
         </activity>
 
-        <activity android:name=".business.TransitionActivity"
+        <activity android:name=".app.TransitionActivity"
             android:screenOrientation="portrait"
             android:theme="@style/SplashTheme">
             <intent-filter>
@@ -33,21 +33,21 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".business.login.LoginActivity"
+        <activity android:name=".app.login.LoginActivity"
             android:screenOrientation="portrait">
         </activity>
 
-        <activity android:name=".business.register.RegisterActivity"
+        <activity android:name=".app.register.RegisterActivity"
             android:screenOrientation="portrait">
         </activity>
 
-        <activity android:name=".business.scan.CommonScanActivity"
+        <activity android:name=".app.scan.CommonScanActivity"
             android:screenOrientation="portrait"/>
 
-        <activity android:name=".business.input.InputActivity"
+        <activity android:name=".app.input.InputActivity"
             android:screenOrientation="portrait"/>
 
-        <activity android:name=".business.about.AboutActivity"
+        <activity android:name=".app.about.AboutActivity"
             android:screenOrientation="portrait"/>
 
     </application>

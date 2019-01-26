@@ -1,9 +1,9 @@
 package com.kt.james.wmsforandroid.net;
 
-import com.kt.james.wmsforandroid.business.input.dto.AddItemDto;
-import com.kt.james.wmsforandroid.business.input.dto.CheckItemBarcodeDto;
-import com.kt.james.wmsforandroid.business.input.dto.CheckLocDto;
-import com.kt.james.wmsforandroid.business.login.LoginDto;
+import com.kt.james.wmsforandroid.app.input.dto.AddItemDto;
+import com.kt.james.wmsforandroid.app.input.dto.CheckItemBarcodeDto;
+import com.kt.james.wmsforandroid.app.input.dto.CheckLocDto;
+import com.kt.james.wmsforandroid.app.login.LoginDto;
 
 import io.reactivex.Observable;
 import retrofit2.http.Field;

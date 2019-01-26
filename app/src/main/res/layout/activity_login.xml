@@ -7,7 +7,7 @@
 
         <variable
             name="viewModel"
-            type="com.kt.james.wmsforandroid.business.login.LoginViewModel" />
+            type="com.kt.james.wmsforandroid.app.login.LoginViewModel" />
     </data>
 
     <ScrollView

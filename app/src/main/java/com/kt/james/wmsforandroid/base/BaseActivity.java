@@ -1,7 +1,6 @@
 package com.kt.james.wmsforandroid.base;
 
 import android.arch.lifecycle.AndroidViewModel;
-import android.arch.lifecycle.ViewModelProvider;
 import android.arch.lifecycle.ViewModelProviders;
 import android.databinding.DataBindingUtil;
 import android.databinding.ViewDataBinding;
@@ -18,17 +17,13 @@ import android.view.ViewStub;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
-import com.alibaba.android.arouter.launcher.ARouter;
 import com.kt.james.wmsforandroid.R;
-import com.kt.james.wmsforandroid.app.App;
 import com.kt.james.wmsforandroid.databinding.ActivityBaseBinding;
 import com.kt.james.wmsforandroid.utils.ARouterUtil;
 import com.kt.james.wmsforandroid.utils.ClassUtil;
 import com.kt.james.wmsforandroid.utils.ResourceUtil;
 import com.kt.james.wmsforandroid.view.PerfectClickListener;
 import com.kt.james.wmsforandroid.view.StatusBarUtil;
-
-import io.reactivex.disposables.CompositeDisposable;
 
 public abstract class BaseActivity<VM extends AndroidViewModel, SV extends ViewDataBinding> extends AppCompatActivity {
 

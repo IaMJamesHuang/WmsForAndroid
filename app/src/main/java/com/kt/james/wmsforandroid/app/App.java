@@ -4,11 +4,10 @@ import android.app.Application;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
-import android.os.Build;
 
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.kt.james.wmsforandroid.BuildConfig;
-import com.kt.james.wmsforandroid.business.utils.WmsSpManager;
+import com.kt.james.wmsforandroid.app.utils.WmsSpManager;
 import com.kt.james.wmsforandroid.net.HttpUtils;
 import com.kt.james.wmsforandroid.utils.crash.JLogCrashHandler;
 import com.uuzuche.lib_zxing.activity.ZXingLibrary;
