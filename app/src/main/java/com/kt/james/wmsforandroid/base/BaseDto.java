@@ -1,4 +1,4 @@
-package com.kt.james.wmsforandroid.business;
+package com.kt.james.wmsforandroid.base;
 
 public class BaseDto {
 

@@ -20,4 +20,7 @@
     <color name="colorNavLine">#E0E0E0</color>
     <!--正文文字颜色-->
     <color name="colorContent">#ff333333</color>
+
+    <!--首页item文字颜色-->
+    <color name="colorSubtitle">#999</color>
 </resources>

@@ -10,7 +10,7 @@ import android.view.ViewGroup;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.kt.james.wmsforandroid.R;
-import com.kt.james.wmsforandroid.base.adapter.OnItemClickListener;
+import com.kt.james.wmsforandroid.app.Constants;
 import com.kt.james.wmsforandroid.business.utils.WmsSpManager;
 import com.kt.james.wmsforandroid.databinding.ActivityMainBinding;
 import com.kt.james.wmsforandroid.databinding.LayoutNavMainBinding;
@@ -79,7 +79,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         list.add(new MainPageBean(R.drawable.icon_down,
                 ResourceUtil.getString(R.string.main_module_down)));
         list.add(new MainPageBean(R.drawable.icon_replenish,
-                ResourceUtil.getString(R.string.main_module_report)));
+                ResourceUtil.getString(R.string.main_module_replenish)));
         list.add(new MainPageBean(R.drawable.icon_report,
                 ResourceUtil.getString(R.string.main_module_report)));
         list.add(new MainPageBean(R.drawable.icon_input,
@@ -99,6 +99,28 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 // 开启菜单
                 bindingView.drawerLayout.openDrawer(GravityCompat.START);
                 break;
+            case R.id.ll_nav_about:
+                //关于应用
+                ARouterUtil.nav(this, Constants.URI_ABOUT);
+                break;
+            case R.id.ll_nav_login:
+                //切换用户
+                loginOut(true);
+                break;
+            case R.id.ll_nav_exit:
+                //退出应用
+                loginOut(false);
+                break;
         }
     }
+
+    private void loginOut(boolean loginAgain) {
+        WmsSpManager.setCompanyId(null);
+        WmsSpManager.setIsLogin(false);
+        if (loginAgain) {
+            ARouterUtil.nav(this, Constants.URI_MAIN_ACTIVITY);
+        }
+        finish();
+    }
+
 }

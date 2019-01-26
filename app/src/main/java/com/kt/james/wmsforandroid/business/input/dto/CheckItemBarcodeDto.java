@@ -1,6 +1,6 @@
 package com.kt.james.wmsforandroid.business.input.dto;
 
-import com.kt.james.wmsforandroid.business.BaseDto;
+import com.kt.james.wmsforandroid.base.BaseDto;
 
 public class CheckItemBarcodeDto extends BaseDto {
 

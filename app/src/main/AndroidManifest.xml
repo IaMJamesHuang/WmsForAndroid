@@ -47,6 +47,9 @@
         <activity android:name=".business.input.InputActivity"
             android:screenOrientation="portrait"/>
 
+        <activity android:name=".business.about.AboutActivity"
+            android:screenOrientation="portrait"/>
+
     </application>
 
 </manifest>
