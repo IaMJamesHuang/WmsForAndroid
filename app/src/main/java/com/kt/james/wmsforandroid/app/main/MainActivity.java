@@ -72,6 +72,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 case "下架":
                     ARouterUtil.nav(MainActivity.this, URI_OFF_SHELF_ACTIVITY);
                     break;
+                case "布局":
+                    break;
             }
         }));
     }
@@ -88,6 +90,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 ResourceUtil.getString(R.string.main_module_report)));
         list.add(new MainPageBean(R.drawable.icon_input,
                 ResourceUtil.getString(R.string.main_module_input)));
+        list.add(new MainPageBean(R.drawable.icon_layout,
+                ResourceUtil.getString(R.string.main_module_layout)));
         mPageAdapter.addAll(list);
     }
 

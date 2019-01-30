@@ -29,6 +29,7 @@
     <string name="main_module_down">下架</string>
     <string name="main_module_report">报表</string>
     <string name="main_module_input">录入</string>
+    <string name="main_module_layout">布局</string>
     <string name="main_nav_about">关于应用</string>
     <string name="main_nav_switch">切换用户</string>
     <string name="main_nav_exit">退出应用</string>
@@ -61,4 +62,7 @@
     <string name="off_shelf_title">下架</string>
     <string name="off_shelf_loc">下架库位：</string>
     <string name="off_shelf_num">下架数量：</string>
+
+    //布局
+    <string name="layout_title">布局</string>
 </resources>
