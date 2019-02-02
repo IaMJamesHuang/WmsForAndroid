@@ -1,6 +1,7 @@
 package com.kt.james.wmsforandroid.net.interceptor;
 
 import com.kt.james.wmsforandroid.app.App;
+import com.kt.james.wmsforandroid.app.utils.WmsSpManager;
 import com.kt.james.wmsforandroid.utils.net.NetworkUtil;
 
 import java.io.IOException;
@@ -16,6 +17,7 @@ public class HttpHeadInterceptor implements Interceptor {
         Request.Builder builder = request.newBuilder();
         builder.addHeader("Accept", "application/json;versions=1");
         builder.addHeader("User-Agent", "WmsForAndroid");
+        builder.addHeader("company_id", WmsSpManager.getCompanyId());
         if (NetworkUtil.isNetworkConnected(App.getAppContext())) {
             int maxAge = 60;
             builder.addHeader("Cache-Control", "public, max-age=" + maxAge);

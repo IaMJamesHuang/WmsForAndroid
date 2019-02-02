@@ -17,6 +17,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <Button
+                android:onClick="postLayoutInfo"
                 android:id="@+id/bt_submit"
                 android:layout_width="match_parent"
                 android:text="@string/common_submit"

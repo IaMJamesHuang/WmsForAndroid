@@ -47,6 +47,8 @@
     <string name="common_submit">提交</string>
     <string name="common_yes">确认</string>
     <string name="common_loc">库位：</string>
+    <string name="common_save">保存</string>
+    <string name="common_cancel">取消</string>
 
     //扫码
     <string name="scan_title">扫码</string>
@@ -65,4 +67,9 @@
 
     //布局
     <string name="layout_title">布局</string>
+    <string name="layout_loc_name">库位名称：</string>
+    <string name="layout_pos">库位坐标：</string>
+    <string name="layout_ava_count">可用库存：</string>
+    <string name="layout_total_count">库存总量：</string>
+    <string name="layout_dialog_toast">%s不能为空</string>
 </resources>

@@ -52,6 +52,7 @@
                         android:src="@drawable/titlebar_menu" />
 
                     <TextView
+                        android:textStyle="bold"
                         android:textSize="18sp"
                         android:textColor="@color/colorWhite"
                         android:paddingRight="10dp"

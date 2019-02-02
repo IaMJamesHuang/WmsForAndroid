@@ -12,4 +12,13 @@ public class MathUtil {
         return result;
     }
 
+    public static boolean isFloatRight(String value) {
+        try {
+            float result = Float.parseFloat(value);
+        } catch (Exception e) {
+            return false;
+        }
+        return true;
+    }
+
 }

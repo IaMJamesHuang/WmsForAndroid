@@ -22,6 +22,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static com.kt.james.wmsforandroid.app.Constants.URI_INPUT_ITEM_ACTIVITY;
+import static com.kt.james.wmsforandroid.app.Constants.URI_LAYOUT_ACTIVITY;
 import static com.kt.james.wmsforandroid.app.Constants.URI_OFF_SHELF_ACTIVITY;
 
 @Route(path = "/main/main_activity", name = "主页面")
@@ -73,6 +74,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     ARouterUtil.nav(MainActivity.this, URI_OFF_SHELF_ACTIVITY);
                     break;
                 case "布局":
+                    ARouterUtil.nav(MainActivity.this, URI_LAYOUT_ACTIVITY);
                     break;
             }
         }));
