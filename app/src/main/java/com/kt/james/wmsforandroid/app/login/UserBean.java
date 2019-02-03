@@ -3,7 +3,7 @@ package com.kt.james.wmsforandroid.app.login;
 public class UserBean {
 
     private String username;
-
+    private String id;
     private String company_id;
 
     public String getCompany_id() {
@@ -22,4 +22,11 @@ public class UserBean {
         this.username = username;
     }
 
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 }

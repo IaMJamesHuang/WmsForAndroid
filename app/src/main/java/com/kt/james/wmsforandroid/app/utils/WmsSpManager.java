@@ -8,6 +8,8 @@ public class WmsSpManager{
 
     private static final String COMPANY_ID = "company_id";
 
+    private static final String USER_ID = "user_id";
+
     public static boolean getIsLogin() {
         return SPUtil.getBoolean(IS_LOGIN, false);
     }
@@ -22,6 +24,14 @@ public class WmsSpManager{
 
     public static void setCompanyId(String companyId) {
         SPUtil.putString(COMPANY_ID, companyId);
+    }
+
+    public static String getUserId() {
+        return  SPUtil.getString(USER_ID, "0");
+    }
+
+    public static void setUserId(String userId) {
+        SPUtil.putString(USER_ID, userId);
     }
 
 }

@@ -18,6 +18,7 @@ public class HttpHeadInterceptor implements Interceptor {
         builder.addHeader("Accept", "application/json;versions=1");
         builder.addHeader("User-Agent", "WmsForAndroid");
         builder.addHeader("company_id", WmsSpManager.getCompanyId());
+        builder.addHeader("user_id", WmsSpManager.getUserId());
         if (NetworkUtil.isNetworkConnected(App.getAppContext())) {
             int maxAge = 60;
             builder.addHeader("Cache-Control", "public, max-age=" + maxAge);

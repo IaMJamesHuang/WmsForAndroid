@@ -48,6 +48,7 @@ public class LoginViewModel extends AndroidViewModel {
                     public void onNext(LoginDto loginDto) {
                         if (loginDto != null && loginDto.getResponseCode() == HttpClient.CODE_SUCCESS) {
                             WmsSpManager.setCompanyId(loginDto.getUserBean().getCompany_id());
+                            WmsSpManager.setUserId(loginDto.getUserBean().getId());
                             data.setValue(true);
                         } else {
                             if (loginDto != null) {
