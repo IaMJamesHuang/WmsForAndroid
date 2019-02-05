@@ -55,8 +55,13 @@
 
         <activity android:name=".app.layout.LayoutActivity"
             android:screenOrientation="portrait">
-
         </activity>
+
+        <activity android:name=".app.upshelf.UpShelfActivity"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".app.upshelf.UpShelfItemActivity"
+            android:screenOrientation="portrait"/>
 
     </application>
 

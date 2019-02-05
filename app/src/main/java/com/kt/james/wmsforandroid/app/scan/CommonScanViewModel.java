@@ -8,6 +8,7 @@ import android.support.annotation.NonNull;
 import android.text.TextUtils;
 
 import com.kt.james.wmsforandroid.app.scan.dto.CheckItemBarcodeDto;
+import com.kt.james.wmsforandroid.app.scan.dto.CheckLocBean;
 import com.kt.james.wmsforandroid.app.scan.dto.CheckLocDto;
 import com.kt.james.wmsforandroid.app.scan.dto.ItemBarcodeBean;
 import com.kt.james.wmsforandroid.app.utils.WmsSpManager;
@@ -22,7 +23,7 @@ import io.reactivex.schedulers.Schedulers;
 
 public class CommonScanViewModel extends AndroidViewModel {
 
-    public final ObservableField<Boolean> isItem = new ObservableField<>();
+    public final ObservableField<Integer> which = new ObservableField<>();
 
     public final ObservableField<String> itemName = new ObservableField<>();
 
@@ -32,18 +33,20 @@ public class CommonScanViewModel extends AndroidViewModel {
 
     public final ObservableField<String> locCode = new ObservableField<>();
 
+    public final ObservableField<String> stringCode = new ObservableField<>();
+
     private boolean isReady = false;
 
-    private ScanItemBean itemResult;
+    private ItemBarcodeBean itemResult;
 
-    private String locResult;
+    private CheckLocBean locResult;
 
     public CommonScanViewModel(@NonNull Application application) {
         super(application);
     }
 
-    public MutableLiveData<ScanItemBean> requestItemCode(String code) {
-        MutableLiveData<ScanItemBean> result = new MutableLiveData<>();
+    public MutableLiveData<ItemBarcodeBean> requestItemCode(String code) {
+        MutableLiveData<ItemBarcodeBean> result = new MutableLiveData<>();
         if (TextUtils.isEmpty(code)) {
             result.setValue(null);
             return result;
@@ -51,30 +54,25 @@ public class CommonScanViewModel extends AndroidViewModel {
         HttpClient.Builder.getWmsService().checkItemBarcode(code, WmsSpManager.getCompanyId())
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .map(new Function<CheckItemBarcodeDto, ScanItemBean>() {
+                .map(new Function<CheckItemBarcodeDto, ItemBarcodeBean>() {
                     @Override
-                    public ScanItemBean apply(CheckItemBarcodeDto checkItemBarcodeDto) throws Exception {
-                        if (checkItemBarcodeDto.getResponseCode() != HttpClient.CODE_SUCCESS) {
-                            ToastUtil.showToast(checkItemBarcodeDto.getResponseMsg());
+                    public ItemBarcodeBean apply(CheckItemBarcodeDto checkItemBarcodeDto) throws Exception {
+                        if (checkItemBarcodeDto == null || checkItemBarcodeDto.getResponseCode() != HttpClient.CODE_SUCCESS) {
+                            if (checkItemBarcodeDto != null) {
+                                ToastUtil.showToast(checkItemBarcodeDto.getResponseMsg());
+                            }
                             return null;
                         }
-                        ScanItemBean bean = new ScanItemBean();
-                        ItemBarcodeBean item = checkItemBarcodeDto.getResult();
-                        bean.setBarcode(item.getBarcode());
-                        bean.setFactory(item.getFactory());
-                        bean.setSpec(item.getSpec());
-                        bean.setImg_path(item.getImg_path());
-                        bean.setName(item.getName());
-                        return bean;
+                        return checkItemBarcodeDto.getResult();
                     }
-                }).subscribe(new Observer<ScanItemBean>() {
+                }).subscribe(new Observer<ItemBarcodeBean>() {
             @Override
             public void onSubscribe(Disposable d) {
 
             }
 
             @Override
-            public void onNext(ScanItemBean scanItemBean) {
+            public void onNext(ItemBarcodeBean scanItemBean) {
                 isReady = scanItemBean != null;
                 itemResult = scanItemBean;
                 result.setValue(scanItemBean);
@@ -93,8 +91,8 @@ public class CommonScanViewModel extends AndroidViewModel {
         return result;
     }
 
-    public MutableLiveData<String> requestLocCode(String code) {
-        MutableLiveData<String> result = new MutableLiveData<>();
+    public MutableLiveData<CheckLocBean> requestLocCode(String code) {
+        MutableLiveData<CheckLocBean> result = new MutableLiveData<>();
         if (TextUtils.isEmpty(code)) {
             result.setValue(null);
             return result;
@@ -102,23 +100,23 @@ public class CommonScanViewModel extends AndroidViewModel {
         HttpClient.Builder.getWmsService().checkLoc(code, WmsSpManager.getCompanyId())
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .map(new Function<CheckLocDto, String>() {
+                .map(new Function<CheckLocDto, CheckLocBean>() {
                     @Override
-                    public String apply(CheckLocDto checkLocDto) throws Exception {
+                    public CheckLocBean apply(CheckLocDto checkLocDto) throws Exception {
                         if (checkLocDto.getResponseCode() != HttpClient.CODE_SUCCESS) {
                             ToastUtil.showToast(checkLocDto.getResponseMsg());
                             return null;
                         }
-                        return checkLocDto.getLocation().getName();
+                        return checkLocDto.getLocation();
                     }
-                }).subscribe(new Observer<String>() {
+                }).subscribe(new Observer<CheckLocBean>() {
             @Override
             public void onSubscribe(Disposable d) {
 
             }
 
             @Override
-            public void onNext(String s) {
+            public void onNext(CheckLocBean s) {
                 locResult = s;
                 isReady = locResult != null;
                 result.setValue(s);
@@ -138,14 +136,21 @@ public class CommonScanViewModel extends AndroidViewModel {
     }
 
     public boolean isReady() {
+        if (CommonScanActivity.STRING == which.get()) {
+            return true;
+        }
         return isReady;
     }
 
-    public ScanItemBean getItemResult() {
+    public ItemBarcodeBean getItemResult() {
         return itemResult;
     }
 
-    public String getLocResult() {
+    public CheckLocBean getLocResult() {
         return locResult;
+    }
+
+    public String getStringResult() {
+        return stringCode.get();
     }
 }

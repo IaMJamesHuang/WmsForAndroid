@@ -1,6 +1,8 @@
 package com.kt.james.wmsforandroid.base;
 
-public class BaseDto {
+import java.io.Serializable;
+
+public class BaseDto implements Serializable {
 
     private String responseMsg;
     private int responseCode;

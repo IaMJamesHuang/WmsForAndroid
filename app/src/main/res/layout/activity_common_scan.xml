@@ -42,7 +42,7 @@
 
                     <LinearLayout
                         tools:visibility="gone"
-                        android:visibility="@{viewModel.isItem ? View.VISIBLE : View.GONE}"
+                        android:visibility="@{viewModel.which == 0 ? View.VISIBLE : View.GONE}"
                         android:orientation="vertical"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
@@ -93,8 +93,8 @@
                     </LinearLayout>
 
                    <LinearLayout
-                       tools:visibility="visible"
-                       android:visibility="@{viewModel.isItem ? View.GONE : View.VISIBLE}"
+                       tools:visibility="gone"
+                       android:visibility="@{viewModel.which == 1 ? View.VISIBLE : View.GONE}"
                        android:orientation="vertical"
                        android:layout_width="match_parent"
                        android:layout_height="wrap_content">
@@ -108,7 +108,7 @@
                                style="@style/CommonText"/>
                            <TextView
                                android:id="@+id/tv_loc_code"
-                               android:text="@{viewModel.locCode}"
+                               android:text="@={viewModel.locCode}"
                                android:textColor="@color/colorBlack"
                                tools:text="LC00002"
                                style="@style/CommonText"/>
@@ -116,6 +116,29 @@
 
                    </LinearLayout>
 
+                    <LinearLayout
+                        tools:visibility="visible"
+                        android:visibility="@{viewModel.which == 2 ? View.VISIBLE : View.GONE}"
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:layout_marginBottom="@dimen/activity_vertical_margin"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                            <TextView
+                                android:text="@string/common_result"
+                                style="@style/CommonText"/>
+                            <TextView
+                                android:id="@+id/tv_string"
+                                android:text="@={viewModel.stringCode}"
+                                android:textColor="@color/colorBlack"
+                                tools:text="LC00002"
+                                style="@style/CommonText"/>
+                        </LinearLayout>
+
+                    </LinearLayout>
 
                 </LinearLayout>
             </ScrollView>

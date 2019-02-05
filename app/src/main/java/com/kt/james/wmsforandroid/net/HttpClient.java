@@ -7,6 +7,7 @@ import com.kt.james.wmsforandroid.app.login.LoginDto;
 import com.kt.james.wmsforandroid.app.offshelf.OffShelfDto;
 import com.kt.james.wmsforandroid.app.scan.dto.CheckItemBarcodeDto;
 import com.kt.james.wmsforandroid.app.scan.dto.CheckLocDto;
+import com.kt.james.wmsforandroid.app.upshelf.UpShelfDto;
 
 import io.reactivex.Observable;
 import okhttp3.RequestBody;
@@ -113,5 +114,11 @@ public interface HttpClient {
     @Headers({"Content-Type: application/json","Accept: application/json"})//需要添加头
     @POST ("layoutAJust")
     Observable<PostLayoutsDto> postLayoutInfos(@Body RequestBody jsonData);
+
+    @GET("upShelf")
+    Observable<UpShelfDto> getUpShelfInfo(@Query("shelf_list_id") String shelfListId,
+                                          @Query("pos_X") int poxX, @Query("pos_y") int poxY,
+                                          @Query("item_id") int itemId, @Query("loc_id") int locId,
+                                          @Query("num") float num);
 
 }

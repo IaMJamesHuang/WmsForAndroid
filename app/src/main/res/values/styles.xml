@@ -63,6 +63,11 @@
         <item name="android:layout_height">wrap_content</item>
     </style>
 
+    <style name="CommonTextBold" parent="CommonText">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/colorBlack</item>
+    </style>
+
     <style name="CommonEditText">
         <item name="android:textColor">@color/colorBlack</item>
         <item name="android:layout_gravity">center</item>

@@ -9,9 +9,10 @@ import android.view.View;
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.kt.james.wmsforandroid.R;
 import com.kt.james.wmsforandroid.app.Constants;
+import com.kt.james.wmsforandroid.app.scan.dto.CheckLocBean;
+import com.kt.james.wmsforandroid.app.scan.dto.ItemBarcodeBean;
 import com.kt.james.wmsforandroid.base.BaseActivity;
 import com.kt.james.wmsforandroid.app.scan.CommonScanActivity;
-import com.kt.james.wmsforandroid.app.scan.ScanItemBean;
 import com.kt.james.wmsforandroid.databinding.ActivityItemInputBinding;
 import com.kt.james.wmsforandroid.utils.ARouterUtil;
 import com.kt.james.wmsforandroid.utils.ResourceUtil;
@@ -73,7 +74,7 @@ public class InputActivity extends BaseActivity<InputViewModel, ActivityItemInpu
         }
         switch (requestCode) {
             case REQUEST_SCAN_ITEM:
-                ScanItemBean result = (ScanItemBean) data.getSerializableExtra(RESULT_TAG);
+                ItemBarcodeBean result = (ItemBarcodeBean) data.getSerializableExtra(RESULT_TAG);
                 if (result != null) {
                     bindingView.etScanBarcode.setText(result.getBarcode());
                     bindingView.etItemName.setText(result.getName());
@@ -82,9 +83,9 @@ public class InputActivity extends BaseActivity<InputViewModel, ActivityItemInpu
                 }
                 break;
             case REQUEST_SCAN_LOC:
-                String loc = data.getStringExtra(RESULT_TAG);
-                if (!TextUtils.isEmpty(loc)) {
-                    bindingView.etScanLoc.setText(loc);
+                CheckLocBean loc = (CheckLocBean) data.getSerializableExtra(RESULT_TAG);
+                if (loc != null && !TextUtils.isEmpty(loc.getName())) {
+                    bindingView.etScanLoc.setText(loc.getName());
                 }
                 break;
         }

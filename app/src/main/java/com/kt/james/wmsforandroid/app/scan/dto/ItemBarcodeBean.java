@@ -1,6 +1,10 @@
 package com.kt.james.wmsforandroid.app.scan.dto;
 
-public class ItemBarcodeBean {
+import java.io.Serializable;
+
+public class ItemBarcodeBean implements Serializable {
+
+    private int id;
 
     private String barcode;
 
@@ -53,4 +57,11 @@ public class ItemBarcodeBean {
         this.img_path = img_path;
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 }
