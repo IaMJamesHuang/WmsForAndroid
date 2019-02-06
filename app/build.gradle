@@ -14,6 +14,11 @@ android {
                 arguments = [AROUTER_MODULE_NAME: project.getName()]
             }
         }
+
+        packagingOptions {
+            exclude 'META-INF/proguard/androidx-annotations.pro'
+        }
+
     }
     buildTypes {
         release {
@@ -67,7 +72,6 @@ dependencies {
 //    api 'com.github.bumptech.glide:glide:4.8.0'
     implementation 'jp.wasabeef:glide-transformations:2.0.1'
 
-
     //lifecycle
     api "android.arch.lifecycle:extensions:1.1.1"
 
@@ -77,4 +81,7 @@ dependencies {
 
     //zxing
     api 'cn.yipianfengye.android:zxing-library:2.2'
+
+    //android图表库
+    implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0-alpha'
 }
