@@ -5,6 +5,8 @@ import com.kt.james.wmsforandroid.app.layout.GetLayoutsDto;
 import com.kt.james.wmsforandroid.app.layout.PostLayoutsDto;
 import com.kt.james.wmsforandroid.app.login.LoginDto;
 import com.kt.james.wmsforandroid.app.offshelf.OffShelfDto;
+import com.kt.james.wmsforandroid.app.report.DaySaleDto;
+import com.kt.james.wmsforandroid.app.report.GetAllItemDto;
 import com.kt.james.wmsforandroid.app.scan.dto.CheckItemBarcodeDto;
 import com.kt.james.wmsforandroid.app.scan.dto.CheckLocDto;
 import com.kt.james.wmsforandroid.app.upshelf.UpShelfDto;
@@ -115,10 +117,28 @@ public interface HttpClient {
     @POST ("layoutAJust")
     Observable<PostLayoutsDto> postLayoutInfos(@Body RequestBody jsonData);
 
+    /**
+     * 上架接口
+     * @param shelfListId 上架单号
+     * @param poxX 当前x
+     * @param poxY 当前y
+     * @param itemId 商品id
+     * @param locId 库位id
+     * @param num 上架数量
+     */
     @GET("upShelf")
     Observable<UpShelfDto> getUpShelfInfo(@Query("shelf_list_id") String shelfListId,
                                           @Query("pos_X") int poxX, @Query("pos_y") int poxY,
                                           @Query("item_id") int itemId, @Query("loc_id") int locId,
                                           @Query("num") float num);
+
+    /**
+     * 获取所有商品
+     */
+    @GET("getAllItem")
+    Observable<GetAllItemDto> getAllItem();
+
+    @GET("daySale")
+    Observable<DaySaleDto> getItemDaySale(@Query("item_id") int itemId);
 
 }

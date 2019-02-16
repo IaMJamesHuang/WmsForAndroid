@@ -54,6 +54,7 @@
     <string name="common_save">保存</string>
     <string name="common_cancel">取消</string>
     <string name="common_result">扫码结果：</string>
+    <string name="common_dash">-</string>
 
     //扫码
     <string name="scan_title">扫码</string>
@@ -82,5 +83,9 @@
     <string name="up_shelf_title">上架</string>
     <string name="up_shelf_order">上架单号：</string>
     <string name="up_shelf_order_hit">请输入上架单号</string>
+
+    //报表
+    <string name="report_title">报表</string>
+    <string name="report_chart_info">商品最近7天销量走势图</string>
 
 </resources>
