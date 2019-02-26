@@ -24,6 +24,7 @@ import java.util.List;
 import static com.kt.james.wmsforandroid.app.Constants.URI_INPUT_ITEM_ACTIVITY;
 import static com.kt.james.wmsforandroid.app.Constants.URI_LAYOUT_ACTIVITY;
 import static com.kt.james.wmsforandroid.app.Constants.URI_OFF_SHELF_ACTIVITY;
+import static com.kt.james.wmsforandroid.app.Constants.URI_REPLENISH_ACTIVITY;
 import static com.kt.james.wmsforandroid.app.Constants.URI_REPORT_ACTIVITY;
 import static com.kt.james.wmsforandroid.app.Constants.URI_UP_SHELF_ACTIVITY;
 
@@ -83,6 +84,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     break;
                 case "报表":
                     ARouterUtil.nav(MainActivity.this, URI_REPORT_ACTIVITY);
+                    break;
+                case "补货":
+                    ARouterUtil.nav(MainActivity.this, URI_REPLENISH_ACTIVITY);
                     break;
             }
         }));

@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="bean"
+            type="com.kt.james.wmsforandroid.app.replenish.ReplenishBean.ReplenishItem" />
+
+    </data>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:paddingBottom="5dp"
+            android:paddingTop="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <CheckBox
+                android:layout_centerVertical="true"
+                android:id="@+id/cb_is_checked"
+                android:layout_width="30dp"
+                android:layout_height="30dp" />
+
+            <LinearLayout
+                android:id="@+id/ll_item_name"
+                android:layout_marginLeft="20dp"
+                android:layout_marginStart="20dp"
+                android:orientation="vertical"
+                android:layout_toEndOf="@+id/cb_is_checked"
+                android:layout_toRightOf="@+id/cb_is_checked"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_marginBottom="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:text="@string/replenish_item_name"
+                        style="@style/CommonText" />
+
+                    <TextView
+                        android:id="@+id/tv_item_name"
+                        tools:text="小面包"
+                        android:text="@{bean.itemName}"
+                        style="@style/CommonText" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_marginBottom="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:text="@string/replenish_recently_sale"
+                        style="@style/CommonText" />
+
+                    <TextView
+                        android:id="@+id/tv_recently_sale"
+                        tools:text="500"
+                        android:text="@{bean.recentlySale}"
+                        style="@style/CommonText" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_marginBottom="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:text="@string/replenish_stock_count"
+                        style="@style/CommonText" />
+
+                    <TextView
+                        android:id="@+id/tv_stock_count"
+                        tools:text="100"
+                        android:text="@{bean.stock}"
+                        style="@style/CommonText" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_marginBottom="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:text="@string/replenish_recommend"
+                        style="@style/CommonText" />
+
+                    <TextView
+                        android:id="@+id/tv_recommend"
+                        tools:text="40"
+                        android:text="@{bean.recommend}"
+                        style="@style/CommonText" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:text="@string/replenish_count"
+                        style="@style/CommonText" />
+
+                    <EditText
+                        android:text="@={bean.replenishNum}"
+                        android:id="@+id/et_replenish_count"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_width="match_parent"
+                        style="@style/CommonEditText"/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <View
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="15dp"
+            android:background="@color/grgray"
+            android:layout_width="match_parent"
+            android:layout_height="1px"/>
+
+    </LinearLayout>
+
+</layout>
+

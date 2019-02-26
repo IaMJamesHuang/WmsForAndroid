@@ -66,6 +66,9 @@
         <activity android:name=".app.report.ReportActivity"
             android:screenOrientation="portrait"/>
 
+        <activity android:name=".app.replenish.ReplenishActivity"
+            android:screenOrientation="portrait"/>
+
     </application>
 
 </manifest>

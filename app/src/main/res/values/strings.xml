@@ -49,6 +49,7 @@
     <string name="common_store_loc_hint">请扫描库位</string>
     <string name="common_amount">存放数量：</string>
     <string name="common_submit">提交</string>
+    <string name="common_quick_submit">快速生成</string>
     <string name="common_yes">确认</string>
     <string name="common_loc">库位：</string>
     <string name="common_save">保存</string>
@@ -88,4 +89,11 @@
     <string name="report_title">报表</string>
     <string name="report_chart_info">商品最近7天销量走势图</string>
 
+    //补货
+    <string name="replenish_title">补货</string>
+    <string name="replenish_item_name">商品名称：</string>
+    <string name="replenish_recently_sale">最近7天销量：</string>
+    <string name="replenish_stock_count">库存数量：</string>
+    <string name="replenish_recommend">推荐补货数量：</string>
+    <string name="replenish_count">补货数量：</string>
 </resources>

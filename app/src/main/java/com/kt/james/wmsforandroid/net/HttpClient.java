@@ -5,6 +5,7 @@ import com.kt.james.wmsforandroid.app.layout.GetLayoutsDto;
 import com.kt.james.wmsforandroid.app.layout.PostLayoutsDto;
 import com.kt.james.wmsforandroid.app.login.LoginDto;
 import com.kt.james.wmsforandroid.app.offshelf.OffShelfDto;
+import com.kt.james.wmsforandroid.app.replenish.ReplenishDto;
 import com.kt.james.wmsforandroid.app.report.DaySaleDto;
 import com.kt.james.wmsforandroid.app.report.GetAllItemDto;
 import com.kt.james.wmsforandroid.app.scan.dto.CheckItemBarcodeDto;
@@ -140,5 +141,8 @@ public interface HttpClient {
 
     @GET("daySale")
     Observable<DaySaleDto> getItemDaySale(@Query("item_id") int itemId);
+
+    @GET("getReplenishInfo")
+    Observable<ReplenishDto> getReplenishInfos();
 
 }
