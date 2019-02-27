@@ -20,6 +20,8 @@ public class ReplenishBean {
 
         public ObservableField<String> replenishNum = new ObservableField<>();
 
+        public ObservableField<Boolean> check = new ObservableField<>();
+
         private int itemId;
 
         private String itemName;

@@ -5,6 +5,7 @@ import com.kt.james.wmsforandroid.app.layout.GetLayoutsDto;
 import com.kt.james.wmsforandroid.app.layout.PostLayoutsDto;
 import com.kt.james.wmsforandroid.app.login.LoginDto;
 import com.kt.james.wmsforandroid.app.offshelf.OffShelfDto;
+import com.kt.james.wmsforandroid.app.replenish.PostReplenishDto;
 import com.kt.james.wmsforandroid.app.replenish.ReplenishDto;
 import com.kt.james.wmsforandroid.app.report.DaySaleDto;
 import com.kt.james.wmsforandroid.app.report.GetAllItemDto;
@@ -139,10 +140,25 @@ public interface HttpClient {
     @GET("getAllItem")
     Observable<GetAllItemDto> getAllItem();
 
+    /**
+     * 获取商品最近7天的销量
+     * @param itemId 商品Id
+     */
     @GET("daySale")
     Observable<DaySaleDto> getItemDaySale(@Query("item_id") int itemId);
 
+    /**
+     * 获取商品补货信息列表
+     * */
     @GET("getReplenishInfo")
     Observable<ReplenishDto> getReplenishInfos();
+
+    /**
+     * 提交布局信息
+     * @param jsonData 布局信息
+     */
+    @Headers({"Content-Type: application/json","Accept: application/json"})//需要添加头
+    @POST ("submitReplenishInfo")
+    Observable<PostReplenishDto> postReplenishInfo(@Body RequestBody jsonData);
 
 }
