@@ -10,6 +10,8 @@ public class WmsSpManager{
 
     private static final String USER_ID = "user_id";
 
+    private static final String USER_NAME = "user_name";
+
     public static boolean getIsLogin() {
         return SPUtil.getBoolean(IS_LOGIN, false);
     }
@@ -32,6 +34,14 @@ public class WmsSpManager{
 
     public static void setUserId(String userId) {
         SPUtil.putString(USER_ID, userId);
+    }
+
+    public static void setUserName(String name) {
+        SPUtil.putString(USER_NAME, name);
+    }
+
+    public static String getUserName() {
+        return SPUtil.getString(USER_NAME, "0");
     }
 
 }

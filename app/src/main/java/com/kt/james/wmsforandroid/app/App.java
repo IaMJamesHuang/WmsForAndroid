@@ -26,8 +26,6 @@ public class App extends Application {
     @Override
     public void onTerminate() {
         super.onTerminate();
-        //去除登陆状态
-        WmsSpManager.setIsLogin(false);
     }
 
     private void init() {

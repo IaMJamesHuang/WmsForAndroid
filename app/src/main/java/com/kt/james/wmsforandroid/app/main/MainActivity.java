@@ -62,6 +62,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         navBinding.llNavExit.setOnClickListener(this);
         navBinding.llNavLogin.setOnClickListener(this);
         bindingView.ivTitleMenu.setOnClickListener(this);
+        navBinding.tvUsername.setText(WmsSpManager.getUserName());
     }
 
     private void initRecycleView() {

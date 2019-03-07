@@ -45,12 +45,13 @@
                         android:paddingTop="@dimen/nav_header_vertical_spacing">
 
                         <TextView
+                            tools:text="Jack"
                             android:id="@+id/tv_username"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                             android:textColor="@color/colorWhite"
-                            android:textSize="17sp" />
+                            android:textSize="18sp" />
 
                     </LinearLayout>
 
@@ -67,7 +68,7 @@
             <LinearLayout
                 android:id="@+id/ll_nav_about"
                 android:layout_width="match_parent"
-                android:layout_height="48dp"
+                android:layout_height="60dp"
                 android:background="?attr/selectableItemBackground"
                 android:clickable="true"
                 android:gravity="center_vertical"
@@ -76,8 +77,8 @@
                 android:paddingRight="16dp">
 
                 <ImageView
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
                     android:src="@drawable/ic_nav_about" />
 
                 <TextView
@@ -86,14 +87,14 @@
                     android:layout_marginLeft="16dp"
                     android:text="@string/main_nav_about"
                     android:textColor="@color/colorContent"
-                    android:textSize="15sp" />
+                    android:textSize="18sp" />
 
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/ll_nav_login"
                 android:layout_width="match_parent"
-                android:layout_height="48dp"
+                android:layout_height="60dp"
                 android:background="?attr/selectableItemBackground"
                 android:clickable="true"
                 android:gravity="center_vertical"
@@ -102,8 +103,8 @@
                 android:paddingRight="16dp">
 
                 <ImageView
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
                     android:src="@drawable/ic_nav_login" />
 
                 <TextView
@@ -112,14 +113,14 @@
                     android:layout_marginLeft="16dp"
                     android:text="@string/main_nav_switch"
                     android:textColor="@color/colorContent"
-                    android:textSize="15sp" />
+                    android:textSize="18sp" />
 
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/ll_nav_exit"
                 android:layout_width="match_parent"
-                android:layout_height="48dp"
+                android:layout_height="60dp"
                 android:background="?attr/selectableItemBackground"
                 android:clickable="true"
                 android:gravity="center_vertical"
@@ -128,8 +129,8 @@
                 android:paddingRight="16dp">
 
                 <ImageView
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
                     android:src="@drawable/ic_nav_exit" />
 
                 <TextView
@@ -138,7 +139,7 @@
                     android:layout_marginLeft="16dp"
                     android:text="@string/main_nav_exit"
                     android:textColor="@color/colorContent"
-                    android:textSize="15sp" />
+                    android:textSize="18sp" />
 
             </LinearLayout>
 
