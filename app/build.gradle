@@ -20,10 +20,25 @@ android {
         }
 
     }
+
+    signingConfigs {
+        release {
+            storeFile file("D:\\James.jks")
+            storePassword STORE_PASSWORD
+            keyAlias KEY_ALIAS
+            keyPassword KEY_PASSWORD
+        }
+    }
+
     buildTypes {
         release {
             minifyEnabled false
+            signingConfig signingConfigs.release
+            manifestPlaceholders = [BASE_URL: "http://129.204.52.46:8080/wms/"]
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            manifestPlaceholders = [BASE_URL: "http://129.204.52.46:8080/wms/"]
         }
     }
     compileOptions {

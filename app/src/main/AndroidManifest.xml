@@ -19,6 +19,9 @@
         android:roundIcon="@mipmap/wms_icon"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
+        <meta-data android:value="${BASE_URL}" android:name="BASE_URL"/>
+
         <activity android:name=".app.main.MainActivity"
             android:screenOrientation="portrait">
 
