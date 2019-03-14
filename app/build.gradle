@@ -1,6 +1,16 @@
 apply plugin: 'com.android.application'
 
 android {
+
+    // rename the apk with the version name
+    applicationVariants.all { variant ->
+        variant.outputs.all { output ->
+            if (outputFileName != null && outputFileName.contains('.apk')) {
+                outputFileName = "wms-${variant.buildType.name}-${variant.versionName}.apk"
+            }
+        }
+    }
+
     compileSdkVersion rootProject.ext.compileSdkVersion
     defaultConfig {
         applicationId "com.kt.james.wmsforandroid"
