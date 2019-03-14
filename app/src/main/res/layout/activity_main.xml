@@ -46,10 +46,10 @@
 
                     <ImageView
                         android:id="@+id/iv_title_menu"
-                        android:layout_width="23dp"
+                        android:layout_width="20dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:src="@drawable/titlebar_menu" />
+                        android:src="@drawable/menu" />
 
                     <TextView
                         android:textStyle="bold"

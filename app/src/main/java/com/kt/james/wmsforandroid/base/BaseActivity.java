@@ -90,7 +90,7 @@ public abstract class BaseActivity<VM extends AndroidViewModel, SV extends ViewD
             //去除默认Title显示
             actionBar.setDisplayShowTitleEnabled(false);
             actionBar.setDisplayHomeAsUpEnabled(true);
-            actionBar.setHomeAsUpIndicator(R.drawable.icon_back);
+            actionBar.setHomeAsUpIndicator(R.drawable.back2);
         }
         mBaseBinding.toolBar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
