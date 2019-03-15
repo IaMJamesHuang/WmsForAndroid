@@ -61,7 +61,7 @@ public class LoginViewModel extends AndroidViewModel {
 
                     @Override
                     public void onError(Throwable e) {
-
+                        ToastUtil.showToast("网络不通！");
                     }
 
                     @Override
