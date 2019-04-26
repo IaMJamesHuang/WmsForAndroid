@@ -8,6 +8,7 @@ import android.support.v4.app.FragmentActivity;
 
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.kt.james.wmsforandroid.R;
+import com.kt.james.wmsforandroid.app.utils.AppPluginLoader;
 
 public class TransitionActivity extends FragmentActivity {
 
@@ -27,6 +28,8 @@ public class TransitionActivity extends FragmentActivity {
                 finish();
             }
         }, 2000);
+//      在这里进行插件安装看起来是比较适合的
+        AppPluginLoader.loadPlugins();
     }
 
     @Override

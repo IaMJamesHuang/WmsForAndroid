@@ -1,5 +1,6 @@
 package com.kt.james.wmsforandroid.app.main;
 
+import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.v4.view.GravityCompat;
@@ -89,6 +90,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 case "补货":
                     ARouterUtil.nav(MainActivity.this, URI_REPLENISH_ACTIVITY);
                     break;
+                case "上架插件":
+                    Intent intent = new Intent();
+                    intent.setAction("plugin.upshell");
+                    startActivity(intent);
             }
         }));
     }
@@ -107,6 +112,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 ResourceUtil.getString(R.string.main_module_input)));
         list.add(new MainPageBean(R.drawable.icon_layout,
                 ResourceUtil.getString(R.string.main_module_layout)));
+        list.add(new MainPageBean(R.drawable.icon_shelf, "上架插件"));
         mPageAdapter.addAll(list);
     }
 

@@ -6,8 +6,8 @@ import android.content.Context;
 import android.content.Intent;
 
 import com.alibaba.android.arouter.launcher.ARouter;
+import com.kt.james.beplugincore.PluginLoader;
 import com.kt.james.wmsforandroid.BuildConfig;
-import com.kt.james.wmsforandroid.app.utils.WmsSpManager;
 import com.kt.james.wmsforandroid.net.HttpUtils;
 import com.kt.james.wmsforandroid.utils.crash.JLogCrashHandler;
 import com.uuzuche.lib_zxing.activity.ZXingLibrary;
@@ -15,6 +15,12 @@ import com.uuzuche.lib_zxing.activity.ZXingLibrary;
 public class App extends Application {
 
     private static App app;
+
+    @Override
+    protected void attachBaseContext(Context base) {
+        super.attachBaseContext(base);
+        initPlugin();
+    }
 
     @Override
     public void onCreate() {
@@ -29,10 +35,14 @@ public class App extends Application {
     }
 
     private void init() {
-        initCrashHandler();
+       // initCrashHandler();
         initHttp();
         initARouter();
         initZXing();
+    }
+
+    private void initPlugin() {
+        PluginLoader.initLoader(this);
     }
 
     private void initCrashHandler() {
