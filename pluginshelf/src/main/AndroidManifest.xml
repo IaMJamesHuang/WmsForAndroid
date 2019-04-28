@@ -9,12 +9,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-            <activity android:name=".UpShellActivity">
+
+        <activity android:name=".upshelf.UpShelfActivity"
+            android:screenOrientation="portrait">
                 <intent-filter>
-                    <action android:name="plugin.upshell"/>
-                    <category android:name="android.intent.category.DEFAULT" />
+                    <action android:name="plugin:shelf"/>
+                    <category android:name="android.intent.category.DEFAULT"/>
                 </intent-filter>
-            </activity>
+        </activity>
+
+        <activity android:name=".upshelf.UpShelfItemActivity"
+            android:screenOrientation="portrait"/>
     </application>
 
 </manifest>

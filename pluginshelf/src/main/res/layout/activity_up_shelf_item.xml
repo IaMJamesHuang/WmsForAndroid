@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_vertical_margin"
+        android:paddingRight="@dimen/activity_vertical_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <android.support.v7.widget.AppCompatImageView
+                android:layout_centerVertical="true"
+                android:id="@+id/iv_item_img"
+                android:src="@drawable/load_err"
+                android:layout_width="100dp"
+                android:layout_height="100dp" />
+
+            <LinearLayout
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_toEndOf="@+id/iv_item_img"
+                android:layout_toRightOf="@+id/iv_item_img"
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_marginBottom="@dimen/activity_vertical_margin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:text="@string/common_item_name"
+                        style="@style/CommonText" />
+
+                    <TextView
+                        android:id="@+id/tv_item_name"
+                        tools:text="指甲油"
+                        style="@style/CommonTextBold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_marginBottom="@dimen/activity_vertical_margin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:text="@string/common_item_barcode"
+                        style="@style/CommonText" />
+
+                    <TextView
+                        android:id="@+id/tv_item_barcode"
+                        tools:text="abcd1234"
+                        style="@style/CommonTextBold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_marginBottom="@dimen/activity_vertical_margin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:text="@string/common_item_spec"
+                        style="@style/CommonText" />
+
+                    <TextView
+                        android:id="@+id/tv_spec"
+                        tools:text="12克"
+                        style="@style/CommonTextBold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:text="@string/common_item_brand"
+                        style="@style/CommonText" />
+
+                    <TextView
+                        android:id="@+id/tv_brand"
+                        tools:text="广东食品有限公司"
+                        style="@style/CommonTextBold" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <View
+            android:layout_marginTop="10dp"
+            android:background="@color/colorLine"
+            android:layout_width="match_parent"
+            android:layout_height="1px" />
+
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_marginBottom="@dimen/activity_vertical_margin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:text="@string/common_up_loc"
+                    style="@style/CommonText" />
+
+                <TextView
+                    android:id="@+id/tv_loc"
+                    tools:text="ABC1234"
+                    style="@style/CommonTextBold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:text="@string/common_up_num"
+                    style="@style/CommonText" />
+
+                <TextView
+                    android:id="@+id/tv_shelf_num"
+                    tools:text="12.0"
+                    style="@style/CommonTextBold" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <View
+            android:layout_marginTop="10dp"
+            android:background="@color/colorLine"
+            android:layout_width="match_parent"
+            android:layout_height="1px" />
+
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_marginBottom="@dimen/activity_vertical_margin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:text="@string/common_item_barcode"
+                    style="@style/CommonText" />
+
+                <EditText
+                    android:enabled="false"
+                    android:id="@+id/et_item_barcode"
+                    android:hint="@string/common_barcode_hint"
+                    style="@style/CommonEditText" />
+
+                <Button
+                    android:onClick="onGoScanItem"
+                    android:id="@+id/bt_scan_item"
+                    android:text="@string/common_go_scan"
+                    style="@style/CommonButton" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginBottom="@dimen/activity_vertical_margin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:text="@string/common_up_loc"
+                    style="@style/CommonText" />
+
+                <EditText
+                    android:id="@+id/et_scan_loc"
+                    style="@style/CommonEditText"
+                    android:enabled="false"
+                    android:hint="@string/common_up_loc_hint" />
+
+                <Button
+                    android:onClick="onGoScanLoc"
+                    android:id="@+id/bt_scan_loc"
+                    android:text="@string/common_go_scan"
+                    style="@style/CommonButton" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginBottom="@dimen/activity_vertical_margin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:text="@string/common_up_num"
+                    style="@style/CommonText" />
+
+                <EditText
+                    android:id="@+id/et_scan_barcode"
+                    android:hint="@string/common_up_num_hint"
+                    style="@style/CommonEditText" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <View
+            android:layout_marginTop="10dp"
+            android:background="@color/colorLine"
+            android:layout_width="match_parent"
+            android:layout_height="1px" />
+
+        <LinearLayout
+            android:layout_marginBottom="@dimen/activity_vertical_margin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:onClick="onSubmit"
+                android:id="@+id/bt_submit"
+                android:layout_width="match_parent"
+                android:text="@string/common_submit"
+                style="@style/CommonButton" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

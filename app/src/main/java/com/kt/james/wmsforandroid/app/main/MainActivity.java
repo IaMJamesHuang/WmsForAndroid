@@ -92,8 +92,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     break;
                 case "上架插件":
                     Intent intent = new Intent();
-                    intent.setAction("plugin.upshell");
+                    intent.setAction("plugin:shelf");
                     startActivity(intent);
+                    break;
+                case "下架插件":
+                    Intent offIntent = new Intent();
+                    offIntent.setAction("plugin:offshelf");
+                    startActivity(offIntent);
+                    break;
             }
         }));
     }
@@ -113,6 +119,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         list.add(new MainPageBean(R.drawable.icon_layout,
                 ResourceUtil.getString(R.string.main_module_layout)));
         list.add(new MainPageBean(R.drawable.icon_shelf, "上架插件"));
+        list.add(new MainPageBean(R.drawable.icon_down, "下架插件"));
         mPageAdapter.addAll(list);
     }
 

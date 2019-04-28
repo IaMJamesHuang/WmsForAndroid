@@ -1,4 +1,6 @@
 apply plugin: 'com.android.application'
+apply from: "../host.gradle"
+
 
 android {
 
@@ -77,7 +79,8 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 
     //插件化
-    implementation 'com.kt.james:beplugin:1.0.0'
+    implementation('com.github.limpoxe:Android-Plugin-Framework:0.0.67@aar')
+//    implementation 'com.kt.james:beplugin:1.0.0'
 
     //rxJava
     api 'io.reactivex.rxjava2:rxjava:2.2.5'
@@ -112,4 +115,16 @@ dependencies {
 
     //android图表库
     implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0-alpha'
+
+    //内置插件
+    innerPlugin files(project(":pluginshelf").getBuildDir().absolutePath + '/outputs/apk/debug/pluginshelf-debug.apk')
+
+    innerPlugin files(project(":pluginoff").getBuildDir().absolutePath + '/outputs/apk/debug/pluginoff-debug.apk')
+}
+
+fairy {
+    //可选配置，用于指定插件进程名。
+    //不设置即使用默认的独立进程(:plugin)
+    //设置为空串或者null即是和宿主同进程
+    pluginProcess = ":plugin"
 }

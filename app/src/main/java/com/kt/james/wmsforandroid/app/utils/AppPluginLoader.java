@@ -1,12 +1,11 @@
 package com.kt.james.wmsforandroid.app.utils;
 
 import android.content.res.AssetManager;
+import android.util.Log;
 
-import com.kt.james.beplugincore.content.InstallResult;
-import com.kt.james.beplugincore.manager.PluginManagerProviderClient;
-import com.kt.james.beplugincore.util.FileUtil;
-import com.kt.james.beplugincore.util.LogUtil;
 import com.kt.james.wmsforandroid.app.App;
+import com.limpoxe.fairy.manager.PluginManagerProviderClient;
+import com.limpoxe.fairy.util.FileUtil;
 
 import java.io.File;
 import java.io.IOException;
@@ -33,7 +32,6 @@ public class AppPluginLoader {
                     install(file);
                 }
             }
-            PluginManagerProviderClient.wakeupAllPlugins();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -49,10 +47,8 @@ public class AppPluginLoader {
             }
             String dest = file.getAbsolutePath() + "/" + name;
             if (FileUtil.copyFile(inputStream, dest)) {
-                InstallResult result = PluginManagerProviderClient.installPlugin(dest);
-                if (result != null) {
-                    LogUtil.d(result.getResult());
-                }
+                int result = PluginManagerProviderClient.install(dest);
+                Log.e("AppPluginLoader", "install: " + result);
             }
         } catch (IOException e) {
             e.printStackTrace();

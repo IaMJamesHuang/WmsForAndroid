@@ -1,3 +1,30 @@
 <resources>
     <string name="app_name">PluginShelf</string>
+    //上架
+    <string name="up_shelf_title">上架</string>
+    <string name="up_shelf_order">上架单号：</string>
+    <string name="up_shelf_order_hit">请输入上架单号</string>
+
+    //通用
+    <string name="common_item_barcode">商品条码：</string>
+    <string name="common_barcode_hint">请扫描商品条码</string>
+    <string name="common_go_scan">去扫码</string>
+    <string name="common_item_name">商品名称：</string>
+    <string name="common_item_spec">商品规格：</string>
+    <string name="common_item_brand">商品品牌：</string>
+    <string name="common_store_loc">存放库位：</string>
+    <string name="common_up_loc">上架库位：</string>
+    <string name="common_up_loc_hint">请扫描上架库位</string>
+    <string name="common_up_num">上架数量：</string>
+    <string name="common_up_num_hint">请输入上架数量</string>
+    <string name="common_store_loc_hint">请扫描库位</string>
+    <string name="common_amount">存放数量：</string>
+    <string name="common_submit">提交</string>
+    <string name="common_quick_submit">快速生成</string>
+    <string name="common_yes">确认</string>
+    <string name="common_loc">库位：</string>
+    <string name="common_save">保存</string>
+    <string name="common_cancel">取消</string>
+    <string name="common_result">扫码结果：</string>
+    <string name="common_dash">-</string>
 </resources>
